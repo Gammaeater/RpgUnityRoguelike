@@ -11,7 +11,7 @@ public class PlayerIIMovment : MonoBehaviour
     //float dashDistance = 100f;
 
 
-    RotateFirepoint rfDirection;
+   
     Vector2 movment;
     Vector2 mousePos;
 
@@ -30,7 +30,7 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             animator.SetBool("attacking", true);
 
@@ -47,12 +47,12 @@ public class PlayerIIMovment : MonoBehaviour
 
             }
         }
-        if ((Input.GetKeyDown(KeyCode.LeftAlt)))
-        {
+        //if ((Input.GetKeyDown(KeyCode.LeftAlt)))
+        //{
 
 
 
-        }
+        //}
 
 
 

@@ -1,26 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
 
-public class Bullet : MonoBehaviour
-{
+//public class Bullet : MonoBehaviour
+//{
+//    public GameObject hiteeffect;
+//    public ShotWapon rb;
 
-    public float bulletSpeed = 20f;
-    public Rigidbody2D rbBullet;
-    public PlayerIIMovment var;
-    public ShotWapon target;
 
-        // Start is called before the first frame update
-    //void Start()
-    //{
-    //    rbBullet.velocity = transform.position
-    //         * bulletSpeed ;
-                    
-    //}
+
+//   void OnCollisionEnter2D(Collision2D collision)
+//    {
+//       GameObject effect = Instantiate(hiteeffect, transform.position, Quaternion.identity);
+//        Destroy(effect, 5f);
+//        Destroy(gameObject);
+//    }
 
  
-    void Update()
-    {
-        transform.Translate(Vector2.up * bulletSpeed *Time.deltaTime);
-    }
-}
+   
+//}
