@@ -1,19 +1,32 @@
 ﻿using UnityEngine;
 
+
+public enum PlayerState
+{
+    walk,
+    attack,
+    interact
+}
+
 public class PlayerIIMovment : MonoBehaviour
 {
+    public PlayerState currentState;
     public float moveSpeed = 5f;
     public float dasH = 20f;
-
+    public Vector2 movment;
     public Rigidbody2D rb;
     public Animator animator;
     public bool attak;
-    //float dashDistance = 100f;
-
-
+    public HealthSystem playerHealtShystem;
    
-    Vector2 movment;
-    Vector2 mousePos;
+
+
+
+
+
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -47,15 +60,10 @@ public class PlayerIIMovment : MonoBehaviour
 
             }
         }
-        //if ((Input.GetKeyDown(KeyCode.LeftAlt)))
-        //{
 
 
-
-        //}
-
-
-
+    
+        
 
     }
 
@@ -66,6 +74,8 @@ public class PlayerIIMovment : MonoBehaviour
 
         //movment
         rb.MovePosition(rb.position + movment * moveSpeed * Time.fixedDeltaTime);
+
+
 
 
 

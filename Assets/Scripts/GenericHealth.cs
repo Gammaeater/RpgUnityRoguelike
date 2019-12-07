@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class GenericHealth : MonoBehaviour
 {
-    public int healt;
-    public string enemyName;
-    public int baseAtack;
-    public float moveSpeed;
 
+    public FloatValue maxHealth;
     // Start is called before the first frame update
     void Start()
     {
