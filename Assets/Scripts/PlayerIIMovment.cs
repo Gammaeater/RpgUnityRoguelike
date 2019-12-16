@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 
 public enum PlayerState
@@ -12,16 +13,21 @@ public class PlayerIIMovment : MonoBehaviour
 {
     public PlayerState currentState;
     public float moveSpeed = 5f;
+
     public float dasH = 20f;
     public Vector2 movment;
     public Rigidbody2D rb;
     public Animator animator;
     public bool attak;
     public HealthSystem playerHealtShystem;
+    public Bat enemyAttack;
+    public float actualHP;
+    [SerializeField] private Text healtText;
    
 
 
 
+    //_playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
 
 
 
@@ -62,8 +68,11 @@ public class PlayerIIMovment : MonoBehaviour
         }
 
 
+
+
+
     
-        
+
 
     }
 
@@ -74,6 +83,8 @@ public class PlayerIIMovment : MonoBehaviour
 
         //movment
         rb.MovePosition(rb.position + movment * moveSpeed * Time.fixedDeltaTime);
+        UpdateHealth();
+
 
 
 
@@ -84,6 +95,12 @@ public class PlayerIIMovment : MonoBehaviour
 
 
     }
+    public void UpdateHealth()
+    {
+        healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
+
+    }
+  
 
 
 

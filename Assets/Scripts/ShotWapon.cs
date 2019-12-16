@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShotWapon : MonoBehaviour
 
@@ -8,7 +6,7 @@ public class ShotWapon : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public  float bulletForce = 20f;
+    public float bulletForce = 20f;
 
 
     // Update is called once per frame
@@ -19,18 +17,24 @@ public class ShotWapon : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
-        }
-        
+        };
+
+
+
+
+
+
+
     }
 
     void Shoot()
     {
         //shooting logic spawning bullet
 
-       GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rbbullet2 = bullet.GetComponent<Rigidbody2D>();
         rbbullet2.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-        
-    
+
+
     }
 }

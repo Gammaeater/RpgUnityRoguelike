@@ -9,13 +9,13 @@ public class GameHandler : MonoBehaviour
     {
         HealthSystem healthSystem = new HealthSystem(100);
 
-        Debug.Log("Health: " + healthSystem.GetHealth());
-        healthSystem.Damage(10);
-        Debug.Log("Health: " + healthSystem.GetHealth());
-        healthSystem.Heal(5);
-        Debug.Log("Health: " + healthSystem.GetHealth());
-        healthSystem.Damage(10);
-        Debug.Log("Health: " + healthSystem.GetHealthPercent());
+       // Debug.Log("Health: " + healthSystem.GetHealth());
+        //healthSystem.Damage(10);
+        //Debug.Log("Health: " + healthSystem.GetHealth());
+        //healthSystem.Heal(5);
+        //Debug.Log("Health: " + healthSystem.GetHealth());
+        //healthSystem.Damage(10);
+        //Debug.Log("Health: " + healthSystem.GetHealthPercent());
 
     }
 

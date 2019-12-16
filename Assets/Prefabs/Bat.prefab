@@ -162,11 +162,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335f13e12b38bba438d2b3f791ca991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healt: 2
+  currentState: 0
   enemyName: Young Bat
   baseAtack: 1
   moveSpeed: 1.5
-  target: {fileID: 0}
-  chaseRaidus: 5
-  attackRadius: 2
-  homePosition: {fileID: 0}
+  playerhealth: {fileID: 0}
+  enemyHealtSystem: {fileID: 0}
+  _myRigidBody: {fileID: 0}
+  _target: {fileID: 0}
+  _chaseRaidus: 0
+  _attackRadius: 0
+  _homePosition: {fileID: 0}
+  _anim: {fileID: 0}
+  _playerTarget: {fileID: 0}
+  Player: {fileID: 0}
+  TimeBetweenShots: 1.25
+  ownBat: {fileID: 0}
+  actualHealth: 0
+  cloudAttack: 0
+  AttackEffect: {fileID: 0}

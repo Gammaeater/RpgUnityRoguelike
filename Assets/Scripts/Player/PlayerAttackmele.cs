@@ -2,43 +2,78 @@
 
 public class PlayerAttackmele : MonoBehaviour
 {
-    private float timeMeleAttack;
-    public float startTimeMeleAttack;
-
-    public Transform attackPos;
-    public LayerMask whatIsEnemies;
-    public float attackRange;
-    public float damage;
 
 
-    // Update is called once per frame
-    void Update()
+    public Bat _batTarget;
+    public DamagePopUp _Dmg;
+    public float TimeBetweenShots;
+    private float timeSinceLastShot;
+    public Transform position;
+    float distance;
+    float _damageAmount;
+    [SerializeField] public Transform dmgprefab;
+
+    void Start()
     {
-        if (timeMeleAttack <= 0)
-        {
-            if (Input.GetKey(KeyCode.LeftAlt))
-            {
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
-                    enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
+        _batTarget = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
 
-                }
+            
+        //float _damageAmount = GameObject.FindWithTag("PopUpHp").GetComponent("DamagePopUp") as DamagePopUp;
+
+
+
+
+    }
+    //void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+
+
+    //    {
+    //        
+
+    //    }
+    //}
+
+    void FixedUpdate()
+    {
+        //DamagePopUp.Create(_batTarget.transform.position, _Dmg.actualHealth);
+        distance = Vector3.Distance(_batTarget.transform.position, transform.position);
+
+        if (distance < 1.5f && _batTarget.enemyHealtSystem.GetHealth() >= 0)
+        {
+            if (Time.time > timeSinceLastShot + TimeBetweenShots)
+            {
+
+                Attack(1f);
+
+                Debug.Log("Atack Wariata hp Bata");
+
+                timeSinceLastShot = Time.time;
 
             }
-            timeMeleAttack = startTimeMeleAttack;
 
         }
-        else
-        {
-            timeMeleAttack -= Time.deltaTime;
-        }
-
+       
     }
-    void OnDrawGizmosSelected()
+
+
+
+
+
+    void Attack(float damage)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+
+
+
+
+        _batTarget.enemyHealtSystem.Damage(damage);
+        Debug.Log("zycie Bata :" + _batTarget.enemyHealtSystem.GetHealth());
+
+
+
+
 
     }
+
 }

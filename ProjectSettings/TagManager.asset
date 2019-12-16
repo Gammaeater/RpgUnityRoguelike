@@ -6,6 +6,10 @@ TagManager:
   tags:
   - PlayerIII
   - PlayerII
+  - Bullet
+  - Bat
+  - attack
+  - PopUpHp
   layers:
   - Default
   - TransparentFX

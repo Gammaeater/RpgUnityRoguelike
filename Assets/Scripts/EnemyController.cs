@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public enum EnemyState
 {
     idle,
@@ -20,13 +22,12 @@ public class Enemy : MonoBehaviour
     public HealthSystem enemyHealtSystem;
 
 
+    
 
 
-    public void TakeDamage(float damage)
-    {
-      
-       
+    
 
-    }
+
+  
   
 }

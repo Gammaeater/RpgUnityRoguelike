@@ -6,9 +6,13 @@ public class HealthSystem : MonoBehaviour
 {
     public float _health;
     public float _health_Max;
+    public GameObject destroyObject;
+    public GameObject effect;
 
     void Start()
+        
     {
+        
         
     }
 
@@ -31,10 +35,17 @@ public class HealthSystem : MonoBehaviour
     public void Damage(float damageAmount)
     {
         _health -= damageAmount;
-        if (_health < 0) _health = 0;
+        if (_health <= 0)
+        {
+            Destroy(destroyObject,0.20f);
+            Debug.Log("U Die MotherFucker");
+        }
         
 
     }
+
+    
+
     public void Heal(float healAmount)
     {
         _health += healAmount;
