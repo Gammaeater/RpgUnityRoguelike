@@ -24,12 +24,18 @@ public class HealthSystem : MonoBehaviour
     }
     public float GetHealth()
     {
+  
         
         return _health;
     }
     public float GetHealthPercent()
     {
         return (_health / _health_Max);
+    }
+
+    public float GetDamage()
+    {
+        return (_health_Max - _health);
     }
 
     public void Damage(float damageAmount)

@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 
-public class Bat : Enemy
+public class Bat : EnemyController
 {
     public Rigidbody2D _myRigidBody;
     public Transform _target;
@@ -10,22 +11,33 @@ public class Bat : Enemy
     public Transform _homePosition;
     public Animator _anim;
     public PlayerIIMovment _playerTarget;
+    public Bat _myContoller;
     public GameObject Player;
     public float TimeBetweenShots;
     private float timeSinceLastShot;
+    private float timeSpawnDeley;
     public Bat ownBat;
     public float actualHealth;
-    public float cloudAttack;
-    public Animator AttackEffect;
-    public FloatingNumbers FloatingNumbers;
+    public Transform rAndomPatrol;
+    public Vector3 positionRandom;
+    public EnemyPatrol is_Player;
+    public GameObject popUpprefab;
+    public float randomBonusHit;
+    public float batfullAttack;
+    public bool isTargeted;
 
 
 
 
-    private float timerSpeed = 5f;
-    // Start is called before the first frame update
     void Start()
     {
+
+
+
+
+
+
+        Debug.Log("wezto rozkmin smieciu");
         currentState = EnemyState.idle;
         _myRigidBody = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
@@ -35,13 +47,11 @@ public class Bat : Enemy
 
 
         _playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
+        _myContoller = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
 
-        //AttackEffect = ownBat.AttackEffect.GetComponent<Animator>();
 
 
         actualHealth = ownBat.enemyHealtSystem.GetHealth();
-
-
 
 
 
@@ -59,11 +69,8 @@ public class Bat : Enemy
     {
 
 
-
-
-
         CheckDistance();
-        UpdateHpAnim();
+        StartCoroutine(UpdateHpAnim());
 
 
 
@@ -77,16 +84,29 @@ public class Bat : Enemy
 
         {
 
+
+
             if (Time.time > timeSinceLastShot + TimeBetweenShots)
             {
-                //_playerTarget.animator.Play("AttackEffect", 0);
 
-                Attack(1f);
+                StartCoroutine(DmgSpawn());
+                Attack(batfullAttack);
+
+
+
+
+
+
+
+
+
+
 
 
                 Debug.Log("Chuj wie co sie dziejdcccce");
 
                 timeSinceLastShot = Time.time;
+
 
 
             }
@@ -108,17 +128,20 @@ public class Bat : Enemy
 
 
 
+
+
     }
-    void CheckDistance()
+    public void CheckDistance()
 
     {
 
 
-        if (Vector3.Distance(_target.position, transform.position) <= _chaseRaidus
-            && Vector3.Distance(_target.position, transform.position) > _attackRadius)
+        if (Vector2.Distance(_target.position, transform.position) <= _chaseRaidus
+            && Vector2.Distance(_target.position, transform.position) > _attackRadius)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _target.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, _target.position, moveSpeed * Time.deltaTime);
             Debug.Log("Tu szukam playera");
+
 
 
 
@@ -137,10 +160,15 @@ public class Bat : Enemy
 
 
 
+
+
+
+
     public void Attack(float damage)
     {
 
-
+        randomBonusHit = (float)Random.Range(1, 5);
+        batfullAttack = baseAtack + randomBonusHit;
 
         _playerTarget.playerHealtShystem.Damage(damage);
         Debug.Log("Zycie Gracza  atak Bata  " + _playerTarget.playerHealtShystem.GetHealth());
@@ -149,11 +177,38 @@ public class Bat : Enemy
 
 
 
+
     }
-    public void UpdateHpAnim()
+    IEnumerator UpdateHpAnim()
     {
         _anim.SetFloat("hp", enemyHealtSystem.GetHealth());
+        yield return new WaitForSeconds(1);
 
     }
 
+
+    IEnumerator DmgSpawn()
+    {
+
+        yield return new WaitForSeconds(4);
+        GameObject FloatHp = Instantiate(popUpprefab, transform.position, transform.rotation);
+
+
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Bullet" || col.name == "Bullet(Clone)")
+        {
+            enemyHealtSystem.Damage(5f);
+            print("Trafilem Trafilem Trafilem");
+
+
+
+
+        }
+
+
+
+    }
 }

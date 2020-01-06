@@ -1,70 +1,88 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerAttackmele : MonoBehaviour
 {
 
 
     public Bat _batTarget;
-    public DamagePopUp _Dmg;
     public float TimeBetweenShots;
-    private float timeSinceLastShot;
+    public float timeSinceLastShot;
     public Transform position;
-    float distance;
-    float _damageAmount;
-    [SerializeField] public Transform dmgprefab;
+    private float distance;
+    public GameObject popUpprefab;
+    public float _timePrefabSpawn;
+    public PlayerIIMovment _player;
+    
 
-    void Start()
-    {
-        _batTarget = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
+    public float _baseAtack;
+    public float _playerRandomHit;
+    public float _playerFullAttack;
+    [SerializeField] private Text healtText;
+    public HealthSystem playerHealtShystem;
 
-            
-        //float _damageAmount = GameObject.FindWithTag("PopUpHp").GetComponent("DamagePopUp") as DamagePopUp;
-
-
-
-
-    }
-    //void Update()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
+    public Transform MyTarget { get; set; }
 
 
-    //    {
-    //        
 
-    //    }
-    //}
+
+
+
+
+
+
+
 
     void FixedUpdate()
     {
-        //DamagePopUp.Create(_batTarget.transform.position, _Dmg.actualHealth);
+
+        UpdateHealth();
+
         distance = Vector3.Distance(_batTarget.transform.position, transform.position);
 
-        if (distance < 1.5f && _batTarget.enemyHealtSystem.GetHealth() >= 0)
+        if (distance < 1.5f && _batTarget.enemyHealtSystem.GetHealth() >= 1)
         {
-            if (Time.time > timeSinceLastShot + TimeBetweenShots)
+
+
+            if (MyTarget != null && Time.time > timeSinceLastShot + TimeBetweenShots)
             {
 
-                Attack(1f);
+                StartCoroutine(Dmg_Spawn());
+                Attack(_playerFullAttack);
 
-                Debug.Log("Atack Wariata hp Bata");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 timeSinceLastShot = Time.time;
 
             }
 
         }
-       
+
     }
 
-
-
-
-
-    void Attack(float damage)
+    public void Attack(float damage)
     {
 
 
+
+        _playerRandomHit = (float)Random.Range(1, 5);
+        _playerFullAttack = _baseAtack + _playerRandomHit;
 
 
         _batTarget.enemyHealtSystem.Damage(damage);
@@ -75,5 +93,30 @@ public class PlayerAttackmele : MonoBehaviour
 
 
     }
+
+    IEnumerator Dmg_Spawn()
+    {
+
+
+        yield return new WaitForSeconds(0);
+        GameObject FloatHp = Instantiate(popUpprefab, _player.transform.position, _player.transform.rotation);
+    }
+
+    public void UpdateHealth()
+    {
+
+        healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
+
+
+
+
+
+
+    }
+
+
+
+
+
 
 }

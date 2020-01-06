@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 
 public enum PlayerState
@@ -16,19 +15,22 @@ public class PlayerIIMovment : MonoBehaviour
 
     public float dasH = 20f;
     public Vector2 movment;
+    public Vector2 mausePosition;
     public Rigidbody2D rb;
     public Animator animator;
     public bool attak;
-    public HealthSystem playerHealtShystem;
     public Bat enemyAttack;
     public float actualHP;
-    [SerializeField] private Text healtText;
-   
 
+    public HealthSystem playerHealtShystem;
+    private Transform selectedUnit;
+    private Bat enemy;
+  
+    void Start()
+    {
+        enemy = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
 
-
-    //_playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
-
+    }
 
 
 
@@ -42,6 +44,8 @@ public class PlayerIIMovment : MonoBehaviour
         movment.y = Input.GetAxisRaw("Vertical");
 
 
+
+
         animator.SetFloat("Horizontal", movment.x);
         animator.SetFloat("Vertical", movment.y);
         animator.SetFloat("Speed", movment.sqrMagnitude);
@@ -49,13 +53,14 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse1))
         {
             animator.SetBool("attacking", true);
 
             attak = true;
 
         }
+
         else
         {
             if (attak)
@@ -67,11 +72,10 @@ public class PlayerIIMovment : MonoBehaviour
             }
         }
 
+     
 
 
 
-
-    
 
 
     }
@@ -81,9 +85,10 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
-        //movment
+
         rb.MovePosition(rb.position + movment * moveSpeed * Time.fixedDeltaTime);
-        UpdateHealth();
+        //TargetEnemy();
+        
 
 
 
@@ -94,16 +99,26 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
-    }
-    public void UpdateHealth()
+
+        }
+
+    void TargetEnemy()
     {
-        healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
+
+
+        enemy._anim.SetBool("isTargeted", true);
+        Debug.Log("Jeeeeeeeeeeeeebbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaacccccccccccc poooooooooooliiiiiiiicje");
+
 
     }
-  
+
+
 
 
 
 
 }
+
+
+
 
