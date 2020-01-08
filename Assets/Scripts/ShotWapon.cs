@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShotWapon : MonoBehaviour
 
@@ -12,11 +11,21 @@ public class ShotWapon : MonoBehaviour
     private float timeSinceLastRangeShot;
     public float bulletSpeed;
     public Vector2 moveDirection;
+    public Vector2 lookAngle;
+    public Vector2 lookDirection;
+
+
+
+    private Transform target;
+    private Vector3 targetPos;
+    private Vector3 thisPos;
+    private float angle;
+
 
     void Start()
     {
         targetBat = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
-
+        firePoint = GameObject.FindWithTag("PlayerII").GetComponent("FirePoint").transform;
     }
     // Update is called once per frame
     void Update()
@@ -30,7 +39,9 @@ public class ShotWapon : MonoBehaviour
                 {
                     Debug.Log("Im Tryin to kill u u wack ass sucker");
                     Shoot();
-                    Debug.Log("Shooooooooooooooooot without Ammo but im still tryin'");
+                    
+
+
 
 
 
@@ -49,16 +60,24 @@ public class ShotWapon : MonoBehaviour
 
     public void Shoot()
     {
-        //shooting logic spawning bullet
-        //yield return new WaitForSeconds(2);
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        float offset = -90f;
+        
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, targetBat.transform.rotation);
         Rigidbody2D rbbullet2 = bullet.GetComponent<Rigidbody2D>();
         moveDirection = (targetBat.transform.position - transform.position).normalized * bulletSpeed;
-        rbbullet2.velocity = new Vector3(moveDirection.x, moveDirection.y);
-        Debug.Log("Spawn ammo + nadanie rotacji");
-       // rbbullet2.AddForce(firePoint.position * bulletSpeed, ForceMode2D.Force);
-        //rbbullet2.position = Vector2.MoveTowards(rbbullet2.position, targetBat.transform.position, bulletSpeed * Time.deltaTime);
+        rbbullet2.velocity = new Vector2(moveDirection.x, moveDirection.y);
+
+        Debug.Log("Spawn ammo + nadanie KIERUNKU LOTU");
+
+
+        targetPos = targetBat.transform.position;
+        thisPos = rbbullet2.position;
+        targetPos.x = targetPos.x - thisPos.x;
+        targetPos.y = targetPos.y - thisPos.y;
+        angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
+        rbbullet2.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + offset));
 
 
     }
+
 }

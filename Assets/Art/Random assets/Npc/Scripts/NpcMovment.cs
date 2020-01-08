@@ -1,15 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class EnemyPatrol : MonoBehaviour
+public class NpcMovment : MonoBehaviour
 {
-
-    public float patrolSpeed;
-
+    public PlayerIIMovment playerTarget;
+    public NpcSara myContoller;
     public Transform moveSpot;
-    public PlayerIIMovment __playerTarget;
-    public Bat __myContoller;
-    public float _attackRadiusDistance;
+    public float patrolSpeed;
     private float patrolWaitTime;
     public float patrolStartWaitTime;
     public float minX;
@@ -17,62 +13,46 @@ public class EnemyPatrol : MonoBehaviour
     public float minY;
     public float maxY;
     public bool isPlayer;
-
-
-
+    public bool busy;
     // Start is called before the first frame update
     void Start()
     {
+        busy = false;
+
         patrolWaitTime = patrolStartWaitTime;
         moveSpot.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
-        __playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
+        playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        float Enemydistance = Vector3.Distance(__playerTarget.transform.position, transform.position);
-        if (Enemydistance > 5f)
+        if (busy == false)
         {
             transform.position = Vector2.MoveTowards(transform.position, moveSpot.position, patrolSpeed * Time.deltaTime);
 
             if (Vector2.Distance(transform.position, moveSpot.position) < 0.2f)
             {
+                Debug.Log("Wy kurwy i grajki");
                 if (patrolWaitTime <= 0)
                 {
                     moveSpot.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+                    print("Dziala mnie to czy kurwa mac nie działa o to jest pytanie :D ");
                     patrolWaitTime = patrolStartWaitTime;
-
                 }
                 else
                 {
                     patrolWaitTime -= Time.deltaTime;
+
                 }
-
             }
-        }
-        else
-        {
-            if (Vector2.Distance(__playerTarget.transform.position, transform.position) > _attackRadiusDistance)
+            else
             {
-                transform.position = Vector2.MoveTowards(transform.position, __playerTarget.transform.position, patrolSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, moveSpot.transform.position, patrolSpeed * Time.deltaTime);
             }
         }
-    }
 
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "PlayerII")
-        {
-            isPlayer = true; ;
-
-        }
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Debug.Log("Twoj staryyyyyyyyyyyyyyy je załatke");
     }
 }
+

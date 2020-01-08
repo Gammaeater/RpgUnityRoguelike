@@ -53,7 +53,7 @@ public class Bat : EnemyController
 
         actualHealth = ownBat.enemyHealtSystem.GetHealth();
 
-
+        
 
 
 
@@ -202,6 +202,7 @@ public class Bat : EnemyController
         {
             enemyHealtSystem.Damage(5f);
             print("Trafilem Trafilem Trafilem");
+            Destroy(col.gameObject);
 
 
 
