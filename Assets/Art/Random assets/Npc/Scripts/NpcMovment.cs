@@ -2,9 +2,15 @@
 
 public class NpcMovment : MonoBehaviour
 {
+    public Animator anim;
     public PlayerIIMovment playerTarget;
     public NpcSara myContoller;
     public Transform moveSpot;
+    public Rigidbody2D myRbBodyNpc;
+    public Transform myPosTransform;
+    public Transform myMovePointTransform;
+    public string dialog;
+    public DialogManager dMan;
     public float patrolSpeed;
     private float patrolWaitTime;
     public float patrolStartWaitTime;
@@ -14,37 +20,46 @@ public class NpcMovment : MonoBehaviour
     public float maxY;
     public bool isPlayer;
     public bool busy;
+    public bool canMove;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         busy = false;
-
+        Rigidbody2D NpCrb = gameObject.GetComponent<Rigidbody2D>();
         patrolWaitTime = patrolStartWaitTime;
         moveSpot.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
         playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
+        myMovePointTransform = GameObject.FindWithTag("MoveSpotPoint").transform;
+        canMove = true;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (busy == false)
         {
+            anim.SetBool("isMoving", true);
             transform.position = Vector2.MoveTowards(transform.position, moveSpot.position, patrolSpeed * Time.deltaTime);
-
+            anim.SetFloat("Vertical", myMovePointTransform.position.normalized.y);
+            anim.SetFloat("Horizontal", myMovePointTransform.position.normalized.x);
             if (Vector2.Distance(transform.position, moveSpot.position) < 0.2f)
             {
-                Debug.Log("Wy kurwy i grajki");
+
                 if (patrolWaitTime <= 0)
                 {
                     moveSpot.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
-                    print("Dziala mnie to czy kurwa mac nie działa o to jest pytanie :D ");
+
+
                     patrolWaitTime = patrolStartWaitTime;
+                    anim.SetBool("isMoving", false);
                 }
                 else
                 {
                     patrolWaitTime -= Time.deltaTime;
-
+                    anim.SetBool("isMoving", false);
                 }
             }
             else
@@ -52,7 +67,44 @@ public class NpcMovment : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, moveSpot.transform.position, patrolSpeed * Time.deltaTime);
             }
         }
+        else
+        {
+            myRbBodyNpc.velocity = Vector2.zero;
+            return;
+        }
 
+    }
+    //void OnTriggerEnter2D(Collider2D player)
+    //{
+    //    if (player.tag == "PlayerII" )
+    //    {
+    //        print("Trafilem Trafilem Trafilemssss");
+
+
+
+
+
+    //    }
+
+
+
+    //}
+    void OnTriggerStay2D(Collider2D _other)
+    {
+        print("siemanko onenisnkjfnjdfhfkdl keleflelele");
+        if (_other.gameObject.tag == "PlayerII")
+        {
+            print("Działa jest gameObject tag == player");
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (!dMan.dialogActive)
+                {
+                    dMan.ShowBox(dialog);
+                    Debug.Log("Dziaaaaaaaaaaaaaaaaaaalaaaaaaaaaaaaaaaaaaaaaa czy niew ?");
+                }
+            }
+        }
     }
 }
 

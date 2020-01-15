@@ -25,7 +25,7 @@ public class ShotWapon : MonoBehaviour
     void Start()
     {
         targetBat = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
-        firePoint = GameObject.FindWithTag("PlayerII").GetComponent("FirePoint").transform;
+       // firePoint = GameObject.FindWithTag("PlayerII").GetComponent("FirePoint").transform;
     }
     // Update is called once per frame
     void Update()
