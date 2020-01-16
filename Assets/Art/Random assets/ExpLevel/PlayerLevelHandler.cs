@@ -7,7 +7,7 @@ public class PlayerLevelHandler : MonoBehaviour
     // Start is called before the first frame update
   void Start()
     {
-        LevelSystem levelSystem = new LevelSystem();
+         LevelSystem levelSystem = new LevelSystem();
         Debug.Log(levelSystem.GetLevelNumber());
         levelSystem.AddExperience(60);
         Debug.Log(levelSystem.GetLevelNumber());

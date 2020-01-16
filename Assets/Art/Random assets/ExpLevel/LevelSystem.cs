@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSystem
+public class LevelSystem : MonoBehaviour
 {
-    private int level;
-    private int experience;
-    private int experienceToNextLevel;
+    public int level;
+    public int experience;
+    public int experienceToNextLevel;
 
     // Update is called once per frame
   public LevelSystem()
     {
-        level = 0;
+        level = 1;
         experience = 0;
         experienceToNextLevel = 100;
         
@@ -29,5 +29,9 @@ public class LevelSystem
     {
         return level;
 
+    }
+    public int GetExpirience()
+    {
+        return experience;
     }
 }

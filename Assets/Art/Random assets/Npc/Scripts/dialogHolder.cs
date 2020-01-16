@@ -19,38 +19,5 @@ public class dialogHolder : MonoBehaviour
 
 
     }
-    //void OnTriggerStay2D(Collider2D _other)
-    //{
-    //    print("siemanko onenisnkjfnjdfhfkdl keleflelele");
-    //    if (_other.gameObject.tag == "PlayerII")
-    //    {
-    //        print("Działa jest gameObject tag == player");
-
-    //        if (Input.GetKeyDown(KeyCode.Space))
-    //        {
-    //            if (!dMan.dialogActive)
-    //            {
-    //                dMan.ShowBox(dialog);
-    //                Debug.Log("Dziaaaaaaaaaaaaaaaaaaalaaaaaaaaaaaaaaaaaaaaaa czy niew ?");
-    //            }
-    //        }
-    //    }
-
-    //}
-    //void OnTriggerEnter2D(Collider2D col)
-    //{
-    //    if (col.tag == "PlayerII")
-    //    {
-
-    //        print("Trafilem Trafilem Trafilem");
-    //        Destroy(col.gameObject);
-
-
-
-
-    //    }
-
-
-
-    //}
+   
 }

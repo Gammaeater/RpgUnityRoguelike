@@ -37,7 +37,7 @@ public class Bat : EnemyController
 
 
 
-        Debug.Log("wezto rozkmin smieciu");
+       
         currentState = EnemyState.idle;
         _myRigidBody = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();

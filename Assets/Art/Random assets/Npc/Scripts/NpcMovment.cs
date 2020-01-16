@@ -25,10 +25,10 @@ public class NpcMovment : MonoBehaviour
     void Awake()
     {
         busy = false;
-        Rigidbody2D NpCrb = gameObject.GetComponent<Rigidbody2D>();
+
         patrolWaitTime = patrolStartWaitTime;
         moveSpot.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
-        playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
+
         myMovePointTransform = GameObject.FindWithTag("MoveSpotPoint").transform;
         canMove = true;
 
@@ -37,14 +37,14 @@ public class NpcMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        anim.SetFloat("Vertical", myMovePointTransform.position.normalized.y);
+        anim.SetFloat("Horizontal", myMovePointTransform.position.normalized.x);
 
         if (busy == false)
         {
             anim.SetBool("isMoving", true);
             transform.position = Vector2.MoveTowards(transform.position, moveSpot.position, patrolSpeed * Time.deltaTime);
-            anim.SetFloat("Vertical", myMovePointTransform.position.normalized.y);
-            anim.SetFloat("Horizontal", myMovePointTransform.position.normalized.x);
+
             if (Vector2.Distance(transform.position, moveSpot.position) < 0.2f)
             {
 
@@ -74,21 +74,7 @@ public class NpcMovment : MonoBehaviour
         }
 
     }
-    //void OnTriggerEnter2D(Collider2D player)
-    //{
-    //    if (player.tag == "PlayerII" )
-    //    {
-    //        print("Trafilem Trafilem Trafilemssss");
 
-
-
-
-
-    //    }
-
-
-
-    //}
     void OnTriggerStay2D(Collider2D _other)
     {
         print("siemanko onenisnkjfnjdfhfkdl keleflelele");
