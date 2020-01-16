@@ -23,7 +23,7 @@ public class PlayerAttackmele : MonoBehaviour
     [SerializeField] private Text healtText;
     [SerializeField] private Text expirence;
     [SerializeField] private Text level;
-
+    [SerializeField]
     public HealthSystem playerHealtShystem;
     public LevelSystem playerlevelSystem;
 
@@ -44,6 +44,8 @@ public class PlayerAttackmele : MonoBehaviour
 
         UpdateHealth();
         UpdateExpirience();
+        Debug.Log(playerlevelSystem.experience);
+        playerlevelSystem.AddExperience(50);
         Debug.Log(playerlevelSystem.experience);
 
         distance = Vector3.Distance(_batTarget.transform.position, transform.position);
@@ -121,8 +123,8 @@ public class PlayerAttackmele : MonoBehaviour
     }
     public void UpdateExpirience()
     {
-        expirence.text = playerlevelSystem.GetExpirience().ToString("0.0");
-        level.text = playerlevelSystem.GetExpirience().ToString("0.0");
+        expirence.text = playerlevelSystem.GetExpirience().ToString("0");
+        level.text = playerlevelSystem.GetLevelNumber().ToString("0");
 
     }
 

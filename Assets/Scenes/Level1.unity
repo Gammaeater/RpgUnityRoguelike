@@ -3330,7 +3330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66.3, y: 0}
+  m_AnchoredPosition: {x: 34.5, y: 0}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &757048861
@@ -4251,7 +4251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: 0.95}
+  m_AnchoredPosition: {x: 12.6, y: 0.95}
   m_SizeDelta: {x: 100.74, y: 28.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464743317
@@ -28635,9 +28635,9 @@ MonoBehaviour:
   _playerFullAttack: 0
   healtText: {fileID: 1455022861}
   expirence: {fileID: 757048861}
-  level: {fileID: 0}
+  level: {fileID: 1464743317}
   playerHealtShystem: {fileID: 2044331550}
-  playerlevelSystem: {fileID: 0}
+  playerlevelSystem: {fileID: 2044331552}
 --- !u!4 &2044331545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 492569434942456052, guid: 707c932c54c19df408f155a391c21730,
