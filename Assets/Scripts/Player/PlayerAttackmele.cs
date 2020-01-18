@@ -15,7 +15,7 @@ public class PlayerAttackmele : MonoBehaviour
     public GameObject popUpprefab;
     public float _timePrefabSpawn;
     public PlayerIIMovment _player;
-    
+
 
     public float _baseAtack;
     public float _playerRandomHit;
@@ -31,7 +31,12 @@ public class PlayerAttackmele : MonoBehaviour
 
 
 
-
+    void Awake()
+    {
+        Debug.Log(playerlevelSystem.experience);
+        playerlevelSystem.AddExperience(50);
+        Debug.Log(playerlevelSystem.experience);
+    }
 
 
 
@@ -44,9 +49,7 @@ public class PlayerAttackmele : MonoBehaviour
 
         UpdateHealth();
         UpdateExpirience();
-        Debug.Log(playerlevelSystem.experience);
-        playerlevelSystem.AddExperience(50);
-        Debug.Log(playerlevelSystem.experience);
+        
 
         distance = Vector3.Distance(_batTarget.transform.position, transform.position);
 

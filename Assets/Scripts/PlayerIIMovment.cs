@@ -53,25 +53,7 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.Mouse1))
-        {
-            animator.SetBool("attacking", true);
-
-            attak = true;
-
-        }
-
-        else
-        {
-            if (attak)
-            {
-                animator.SetBool("attacking", false);
-
-                attak = false;
-
-            }
-        }
-
+     
      
 
 

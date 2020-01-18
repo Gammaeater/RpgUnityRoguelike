@@ -44,7 +44,7 @@ public class HealthSystem : MonoBehaviour
         if (_health <= 0)
         {
             gameObject.SetActive(false);
-            //Destroy(destroyObject,0.20f);
+            
             Debug.Log("U Die MotherFucker");
         }
         

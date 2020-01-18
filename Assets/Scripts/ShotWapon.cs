@@ -13,6 +13,7 @@ public class ShotWapon : MonoBehaviour
     public Vector2 moveDirection;
     public Vector2 lookAngle;
     public Vector2 lookDirection;
+    public Animator _animator;
 
 
 
@@ -25,7 +26,7 @@ public class ShotWapon : MonoBehaviour
     void Start()
     {
         targetBat = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
-       // firePoint = GameObject.FindWithTag("PlayerII").GetComponent("FirePoint").transform;
+        // firePoint = GameObject.FindWithTag("PlayerII").GetComponent("FirePoint").transform;
     }
     // Update is called once per frame
     void Update()
@@ -38,12 +39,13 @@ public class ShotWapon : MonoBehaviour
                 if (Time.time > timeSinceLastRangeShot + TimeBetweenRangeShots)
                 {
                     Debug.Log("Im Tryin to kill u u wack ass sucker");
+                   _animator.SetBool("attacking", true);
                     Shoot();
-                    
 
 
 
 
+                    //_animator.SetBool("attacking", false);
 
                     timeSinceLastRangeShot = Time.time;
 
@@ -61,7 +63,7 @@ public class ShotWapon : MonoBehaviour
     public void Shoot()
     {
         float offset = -90f;
-        
+
         GameObject bullet = Instantiate(bulletPrefab, transform.position, targetBat.transform.rotation);
         Rigidbody2D rbbullet2 = bullet.GetComponent<Rigidbody2D>();
         moveDirection = (targetBat.transform.position - transform.position).normalized * bulletSpeed;
