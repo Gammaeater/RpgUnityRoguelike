@@ -69,7 +69,7 @@ public class PlayerIIMovment : MonoBehaviour
 
 
         rb.MovePosition(rb.position + movment * moveSpeed * Time.fixedDeltaTime);
-        //TargetEnemy();
+       
         
 
 
@@ -84,15 +84,7 @@ public class PlayerIIMovment : MonoBehaviour
 
         }
 
-    void TargetEnemy()
-    {
-
-
-        enemy._anim.SetBool("isTargeted", true);
-        Debug.Log("Jeeeeeeeeeeeeebbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaacccccccccccc poooooooooooliiiiiiiicje");
-
-
-    }
+    
 
 
 

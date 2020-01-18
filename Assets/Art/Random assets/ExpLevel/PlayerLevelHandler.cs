@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class PlayerLevelHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool loopcontrol;
+    public Bat batController;
+    public LevelSystem playerLevelSytem;
+  // Start is called before the first frame update
   void Start()
     {
-         LevelSystem levelSystem = new LevelSystem();
-        Debug.Log(levelSystem.GetLevelNumber());
-        levelSystem.AddExperience(60);
-        Debug.Log(levelSystem.GetLevelNumber());
-        levelSystem.AddExperience(80);
-        Debug.Log(levelSystem.GetLevelNumber());
+
+        loopcontrol = true;
+
+        batController = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
+        playerLevelSytem = GameObject.FindWithTag("PlayerII").GetComponent("LevelSystem") as LevelSystem;
+    }
+    
+
+    void FixedUpdate()
+    {
+        if (batController.enemyHealtSystem.GetHealth() <= 1 && loopcontrol == true)
+        {
+            playerLevelSytem.AddExperience(batController.expAmount);
+            loopcontrol = false;
+        }
     }
 }

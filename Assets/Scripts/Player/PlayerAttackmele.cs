@@ -33,9 +33,9 @@ public class PlayerAttackmele : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log(playerlevelSystem.experience);
-        playerlevelSystem.AddExperience(50);
-        Debug.Log(playerlevelSystem.experience);
+        
+        //playerlevelSystem.AddExperience(50);
+        //Debug.Log(playerlevelSystem.experience);
     }
 
 

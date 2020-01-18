@@ -10,7 +10,7 @@ public class dialogHolder : MonoBehaviour
     {
         _NpcmyRigidBody = GetComponent<Rigidbody2D>();
         dMan = FindObjectOfType<DialogManager>();
-        Debug.Log("Ty kurwo swietojanksjn djobsihbihdsbavughadsvugasvygascvyfg");
+        
     }
 
     // Update is called once per frame

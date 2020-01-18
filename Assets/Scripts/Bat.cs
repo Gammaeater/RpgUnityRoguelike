@@ -11,6 +11,7 @@ public class Bat : EnemyController
     public Transform _homePosition;
     public Animator _anim;
     public PlayerIIMovment _playerTarget;
+    public LevelSystem _playerLevelSytem;
     public Bat _myContoller;
     public GameObject Player;
     public float TimeBetweenShots;
@@ -25,6 +26,7 @@ public class Bat : EnemyController
     public float randomBonusHit;
     public float batfullAttack;
     public bool isTargeted;
+    public int expAmount;
 
 
 
@@ -37,7 +39,7 @@ public class Bat : EnemyController
 
 
 
-       
+        expAmount = 50;
         currentState = EnemyState.idle;
         _myRigidBody = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
@@ -47,13 +49,15 @@ public class Bat : EnemyController
 
 
         _playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
+        _playerLevelSytem = GameObject.FindWithTag("PlayerII").GetComponent("LevelSystem") as LevelSystem;
         _myContoller = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
 
 
 
         actualHealth = ownBat.enemyHealtSystem.GetHealth();
 
-        
+        expAmount = 50;
+
 
 
 
@@ -74,7 +78,6 @@ public class Bat : EnemyController
 
 
 
-
         float distance = Vector3.Distance(_target.transform.position, transform.position);
 
 
@@ -91,6 +94,12 @@ public class Bat : EnemyController
 
                 StartCoroutine(DmgSpawn());
                 Attack(batfullAttack);
+                AddExp();
+
+                //if (actualHealth <= 1)
+                //{
+                //    AddExp();
+                //}
 
 
 
@@ -102,8 +111,6 @@ public class Bat : EnemyController
 
 
 
-
-                Debug.Log("Chuj wie co sie dziejdcccce");
 
                 timeSinceLastShot = Time.time;
 
@@ -210,6 +217,12 @@ public class Bat : EnemyController
         }
 
 
+
+    }
+    void AddExp()
+    {
+
+        _playerLevelSytem.AddExperience(50);
 
     }
 }
