@@ -69,7 +69,7 @@ public class ShotWapon : MonoBehaviour
         moveDirection = (targetBat.transform.position - transform.position).normalized * bulletSpeed;
         rbbullet2.velocity = new Vector2(moveDirection.x, moveDirection.y);
 
-        Debug.Log("Spawn ammo + nadanie KIERUNKU LOTU");
+        
 
 
         targetPos = targetBat.transform.position;

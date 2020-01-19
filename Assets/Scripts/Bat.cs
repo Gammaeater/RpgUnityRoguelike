@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Bat : EnemyController
 {
-    public Rigidbody2D _myRigidBody;
+
     public Transform _target;
     public float _chaseRaidus;
     public float _attackRadius;
     public Transform _homePosition;
     public Animator _anim;
     public PlayerIIMovment _playerTarget;
-    public LevelSystem _playerLevelSytem;
-    public Bat _myContoller;
-    public GameObject Player;
+
+
     public float TimeBetweenShots;
     private float timeSinceLastShot;
-    private float timeSpawnDeley;
     public Bat ownBat;
     public float actualHealth;
     public Transform rAndomPatrol;
-    public Vector3 positionRandom;
-    public EnemyPatrol is_Player;
+
+ 
     public GameObject popUpprefab;
     public float randomBonusHit;
     public float batfullAttack;
@@ -40,8 +38,8 @@ public class Bat : EnemyController
 
 
         expAmount = 50;
-        currentState = EnemyState.idle;
-        _myRigidBody = GetComponent<Rigidbody2D>();
+
+
         _anim = GetComponent<Animator>();
         _target = GameObject.FindWithTag("PlayerII").transform;
 
@@ -49,8 +47,7 @@ public class Bat : EnemyController
 
 
         _playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
-        _playerLevelSytem = GameObject.FindWithTag("PlayerII").GetComponent("LevelSystem") as LevelSystem;
-        _myContoller = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
+
 
 
 
@@ -94,22 +91,6 @@ public class Bat : EnemyController
 
                 StartCoroutine(DmgSpawn());
                 Attack(batfullAttack);
-                AddExp();
-
-                //if (actualHealth <= 1)
-                //{
-                //    AddExp();
-                //}
-
-
-
-
-
-
-
-
-
-
 
 
                 timeSinceLastShot = Time.time;
@@ -219,10 +200,5 @@ public class Bat : EnemyController
 
 
     }
-    void AddExp()
-    {
 
-        _playerLevelSytem.AddExperience(50);
-
-    }
 }

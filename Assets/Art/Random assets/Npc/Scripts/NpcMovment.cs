@@ -80,16 +80,16 @@ public class NpcMovment : MonoBehaviour
         print("siemanko onenisnkjfnjdfhfkdl keleflelele");
         if (_other.gameObject.tag == "PlayerII")
         {
-            print("Działa jest gameObject tag == player");
+            
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (!dMan.dialogActive)
-                {
-                    dMan.ShowBox(dialog);
-                    Debug.Log("Dziaaaaaaaaaaaaaaaaaaalaaaaaaaaaaaaaaaaaaaaaa czy niew ?");
-                }
-            }
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    if (!dMan.dialogActive)
+            //    {
+            //        dMan.ShowBox(dialog);
+            //        Debug.Log("Dziaaaaaaaaaaaaaaaaaaalaaaaaaaaaaaaaaaaaaaaaa czy niew ?");
+            //    }
+            //}
         }
     }
 }
