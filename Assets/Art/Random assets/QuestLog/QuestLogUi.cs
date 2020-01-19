@@ -37,7 +37,7 @@ public class QuestLogUi : MonoBehaviour
     {
         GameObject go = Instantiate(questPrefab, questParent);
 
-        go.GetComponent<Text>().text = quest.MyTitle;
+        //go.GetComponent<Text>().text = quest.MyTitle;
 
 
     }

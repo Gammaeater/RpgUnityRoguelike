@@ -38,7 +38,7 @@ public class ShotWapon : MonoBehaviour
             {
                 if (Time.time > timeSinceLastRangeShot + TimeBetweenRangeShots)
                 {
-                    Debug.Log("Im Tryin to kill u u wack ass sucker");
+
                   // _animator.SetBool("attacking", true);
                     Shoot();
 
