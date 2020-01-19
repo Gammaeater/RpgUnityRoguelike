@@ -12,6 +12,7 @@ TagManager:
   - PopUpHp
   - Npc
   - MoveSpotPoint
+  - QuestLog
   layers:
   - Default
   - TransparentFX

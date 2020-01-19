@@ -4,11 +4,13 @@ public class NpcMovment : MonoBehaviour
 {
     public Animator anim;
     public PlayerIIMovment playerTarget;
+    [SerializeField]
     public NpcSara myContoller;
     public Transform moveSpot;
     public Rigidbody2D myRbBodyNpc;
     public Transform myPosTransform;
     public Transform myMovePointTransform;
+    public GameObject questLog;
     public string dialog;
     public DialogManager dMan;
     public float patrolSpeed;
@@ -21,6 +23,7 @@ public class NpcMovment : MonoBehaviour
     public bool isPlayer;
     public bool busy;
     public bool canMove;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,9 +31,11 @@ public class NpcMovment : MonoBehaviour
 
         patrolWaitTime = patrolStartWaitTime;
         moveSpot.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
-
+        myContoller = GameObject.FindWithTag("Npc").GetComponent<NpcSara>();
         myMovePointTransform = GameObject.FindWithTag("MoveSpotPoint").transform;
         canMove = true;
+       // GameObject questLog = GameObject.FindWithTag("QuestLog").gameObject;
+        
 
     }
 
@@ -72,25 +77,27 @@ public class NpcMovment : MonoBehaviour
             myRbBodyNpc.velocity = Vector2.zero;
             return;
         }
-
+        
     }
 
     void OnTriggerStay2D(Collider2D _other)
     {
-        print("siemanko onenisnkjfnjdfhfkdl keleflelele");
+        
         if (_other.gameObject.tag == "PlayerII")
         {
+            busy = true;
+            questLog.SetActive(true);
             
+            anim.SetBool("isMoving", false);
 
-            //if (Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    if (!dMan.dialogActive)
-            //    {
-            //        dMan.ShowBox(dialog);
-            //        Debug.Log("Dziaaaaaaaaaaaaaaaaaaalaaaaaaaaaaaaaaaaaaaaaa czy niew ?");
-            //    }
-            //}
+
         }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        questLog.SetActive(false);
+        anim.SetBool("isMoving", true);
+        busy = false;
     }
 }
 
