@@ -26,6 +26,7 @@ public class PlayerLevelHandler : MonoBehaviour
         {
             playerLevelSytem.AddExperience(batController.expAmount);
             questRequirements.text = "Bat Killed : 1  Dziekujemy o to twoja nagroda";
+
             loopcontrol = false;
         }
     }
