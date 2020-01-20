@@ -91,9 +91,8 @@ public class Bat : EnemyController
 
                 //StartCoroutine(DmgSpawn());
                 Attack(batfullAttack);
-                Debug.Log(batfullAttack);
-                Debug.Log(_playerTarget.playerHealtShystem.GetHealth());
-                Debug.Log("aTTACKeNEMYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+                
+                
 
 
                 timeSinceLastShot = Time.time;
@@ -131,8 +130,7 @@ public class Bat : EnemyController
             && Vector2.Distance(_target.position, transform.position) > _attackRadius)
         {
             transform.position = Vector2.MoveTowards(transform.position, _target.position, moveSpeed * Time.deltaTime);
-            Debug.Log("Tu szukam playera");
-
+            
 
 
 
@@ -162,7 +160,7 @@ public class Bat : EnemyController
         batfullAttack = baseAtack + randomBonusHit;
 
         _playerTarget.playerHealtShystem.Damage(damage);
-        Debug.Log("Zycie Gracza  atak Bata  " + _playerTarget.playerHealtShystem.GetHealth());
+
 
 
 

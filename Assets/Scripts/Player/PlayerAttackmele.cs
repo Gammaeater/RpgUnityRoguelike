@@ -111,7 +111,7 @@ public class PlayerAttackmele : MonoBehaviour
     {
 
         healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
-        Debug.Log("Update heaaaaaaaaaaaaaalt");
+
 
 
 
