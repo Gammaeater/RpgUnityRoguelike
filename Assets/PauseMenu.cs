@@ -17,17 +17,14 @@ public class PauseMenu : MonoBehaviour
             {
                 Resume();
             }
-            else
-            {
-                Pause();
-            }
+           
         }
         
     }
      public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         GameIsPaused = false;
 
     }
