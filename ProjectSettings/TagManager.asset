@@ -13,6 +13,7 @@ TagManager:
   - Npc
   - MoveSpotPoint
   - QuestLog
+  - Bat2
   layers:
   - Default
   - TransparentFX

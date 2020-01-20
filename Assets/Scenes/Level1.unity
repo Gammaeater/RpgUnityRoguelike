@@ -33419,6 +33419,7 @@ MonoBehaviour:
   ray: {fileID: 2044331545}
   player: {fileID: 2044331542}
   _enemy: {fileID: 3017805453155673219}
+  _enemy2: {fileID: 0}
 --- !u!4 &1524453547
 Transform:
   m_ObjectHideFlags: 0
@@ -67365,6 +67366,11 @@ PrefabInstance:
       propertyPath: _playerTarget
       value: 
       objectReference: {fileID: 2044331546}
+    - target: {fileID: 9142439264007708765, guid: aef9635756f08c145a601bdfe76240c4,
+        type: 3}
+      propertyPath: baseAtack
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9142439264007708762, guid: aef9635756f08c145a601bdfe76240c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67475,6 +67481,11 @@ PrefabInstance:
       propertyPath: __target
       value: 
       objectReference: {fileID: 2044331542}
+    - target: {fileID: 6269325141781722603, guid: aef9635756f08c145a601bdfe76240c4,
+        type: 3}
+      propertyPath: _health
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aef9635756f08c145a601bdfe76240c4, type: 3}
 --- !u!1001 &7590271851437117835
