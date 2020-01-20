@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerLevelHandler : MonoBehaviour
 {
     public bool loopcontrol;
     public Bat batController;
     public LevelSystem playerLevelSytem;
+    public Text questRequirements;
   // Start is called before the first frame update
   void Start()
     {
@@ -23,6 +25,7 @@ public class PlayerLevelHandler : MonoBehaviour
         if (batController.enemyHealtSystem.GetHealth() <= 1 && loopcontrol == true)
         {
             playerLevelSytem.AddExperience(batController.expAmount);
+            questRequirements.text = "Bat Killed : 1  Dziekujemy o to twoja nagroda";
             loopcontrol = false;
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+
 public class QuestScript : MonoBehaviour
 {
     // Start is called before the first frame update
