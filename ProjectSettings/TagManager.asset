@@ -14,6 +14,7 @@ TagManager:
   - MoveSpotPoint
   - QuestLog
   - Bat2
+  - ResumeME
   layers:
   - Default
   - TransparentFX

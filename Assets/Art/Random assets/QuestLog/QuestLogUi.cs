@@ -13,17 +13,17 @@ public class QuestLogUi : MonoBehaviour
 
     private static QuestLogUi instance;
 
-    public static QuestLogUi Myinstance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<QuestLogUi>();
-            }
-            return instance;
-        }
-    }
+    public static QuestLogUi Myinstance;
+    //{
+    //    get
+    //    {
+    //        if (instance == null)
+    //        {
+    //            instance = FindObjectOfType<QuestLogUi>();
+    //        }
+    //        return instance;
+    //    }
+    //}
     void Start()
     {
 
@@ -44,5 +44,9 @@ public class QuestLogUi : MonoBehaviour
     }
 
 
+    public void CancleQuest()
+    {
+        instance.gameObject.SetActive(false);
+    }
 
 }

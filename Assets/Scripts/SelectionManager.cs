@@ -36,7 +36,7 @@ public class SelectionManager : MonoBehaviour
                 }
                
 
-                Debug.Log("Działa czy nieeeeeeeeeeeeeeeeeeeeeeee?");
+               
             }
             else
             {
