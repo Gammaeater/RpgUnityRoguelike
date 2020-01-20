@@ -36,9 +36,9 @@ public class TransitiontoResumMenu : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Level1");
-                Time.timeScale = 1f;
-                GameIsPaused = false;
+                //SceneManager.LoadScene("Level1");
+                //Time.timeScale = 1f;
+                //GameIsPaused = false;
 
             }
 

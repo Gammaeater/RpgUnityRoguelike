@@ -31,12 +31,7 @@ public class PlayerAttackmele : MonoBehaviour
 
 
 
-    void Awake()
-    {
-        
-        //playerlevelSystem.AddExperience(50);
-        //Debug.Log(playerlevelSystem.experience);
-    }
+
 
 
 
@@ -49,7 +44,7 @@ public class PlayerAttackmele : MonoBehaviour
 
         UpdateHealth();
         UpdateExpirience();
-        
+
 
         distance = Vector3.Distance(_batTarget.transform.position, transform.position);
 
@@ -60,12 +55,12 @@ public class PlayerAttackmele : MonoBehaviour
             if (MyTarget != null && Time.time > timeSinceLastShot + TimeBetweenShots)
             {
 
-                StartCoroutine(Dmg_Spawn());
+               StartCoroutine(Dmg_Spawn());
                 Attack(_playerFullAttack);
 
 
 
-
+                Debug.Log("Ataaaaaaaaaaaaaaaakt1");
 
 
 
@@ -97,8 +92,7 @@ public class PlayerAttackmele : MonoBehaviour
 
 
         _batTarget.enemyHealtSystem.Damage(damage);
-        Debug.Log("zycie Bata :" + _batTarget.enemyHealtSystem.GetHealth());
-
+        Debug.Log("Ataaaaaaaaaaaaaaaakt");
 
 
 
@@ -117,6 +111,7 @@ public class PlayerAttackmele : MonoBehaviour
     {
 
         healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
+        Debug.Log("Update heaaaaaaaaaaaaaalt");
 
 
 

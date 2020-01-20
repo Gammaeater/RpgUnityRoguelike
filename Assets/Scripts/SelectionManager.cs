@@ -40,7 +40,7 @@ public class SelectionManager : MonoBehaviour
             }
             else
             {
-                //untarget
+                //untarged
                 player.MyTarget = null;
                 _enemy._anim.SetBool("isTargeted", false);
                 _enemy.isTargeted = false;

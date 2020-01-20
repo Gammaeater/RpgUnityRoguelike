@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3017805453909902647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.007383, y: 0.9358009, z: 0}
+  m_LocalPosition: {x: -21.007383, y: 39.39651, z: 0}
   m_LocalScale: {x: 7, y: 6.65, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -168,16 +169,23 @@ MonoBehaviour:
   moveSpeed: 1.5
   playerhealth: {fileID: 0}
   enemyHealtSystem: {fileID: 0}
-  _myRigidBody: {fileID: 0}
+  criticalAttack: 0
+  fullAttack: 0
+  criticalAttackChance: 0
+  dmgprefab: {fileID: 0}
+  randomHit: 0
   _target: {fileID: 0}
   _chaseRaidus: 0
   _attackRadius: 0
   _homePosition: {fileID: 0}
   _anim: {fileID: 0}
   _playerTarget: {fileID: 0}
-  Player: {fileID: 0}
   TimeBetweenShots: 1.25
   ownBat: {fileID: 0}
   actualHealth: 0
-  cloudAttack: 0
-  AttackEffect: {fileID: 0}
+  rAndomPatrol: {fileID: 0}
+  popUpprefab: {fileID: 0}
+  randomBonusHit: 0
+  batfullAttack: 0
+  isTargeted: 0
+  expAmount: 0

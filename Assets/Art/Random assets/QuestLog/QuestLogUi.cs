@@ -46,7 +46,7 @@ public class QuestLogUi : MonoBehaviour
 
     public void CancleQuest()
     {
-        instance.gameObject.SetActive(false);
+        //instance.gameObject.SetActive(false);
     }
 
 }

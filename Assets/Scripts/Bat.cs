@@ -71,7 +71,7 @@ public class Bat : EnemyController
 
 
         CheckDistance();
-        StartCoroutine(UpdateHpAnim());
+        //StartCoroutine(UpdateHpAnim());
 
 
 
@@ -79,7 +79,7 @@ public class Bat : EnemyController
 
 
 
-        if (distance < 1.5f && _playerTarget.playerHealtShystem.GetHealth() >= 1)
+        if (distance < 2.5f && _playerTarget.playerHealtShystem.GetHealth() >= 1)
 
 
         {
@@ -89,8 +89,11 @@ public class Bat : EnemyController
             if (Time.time > timeSinceLastShot + TimeBetweenShots)
             {
 
-                StartCoroutine(DmgSpawn());
+                //StartCoroutine(DmgSpawn());
                 Attack(batfullAttack);
+                Debug.Log(batfullAttack);
+                Debug.Log(_playerTarget.playerHealtShystem.GetHealth());
+                Debug.Log("aTTACKeNEMYEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 
 
                 timeSinceLastShot = Time.time;

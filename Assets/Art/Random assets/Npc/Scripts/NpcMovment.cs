@@ -34,7 +34,7 @@ public class NpcMovment : MonoBehaviour
         myContoller = GameObject.FindWithTag("Npc").GetComponent<NpcSara>();
         myMovePointTransform = GameObject.FindWithTag("MoveSpotPoint").transform;
         canMove = true;
-       // GameObject questLog = GameObject.FindWithTag("QuestLog").gameObject;
+       
         
 
     }
