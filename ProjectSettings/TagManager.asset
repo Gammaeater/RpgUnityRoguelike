@@ -15,6 +15,7 @@ TagManager:
   - QuestLog
   - Bat2
   - ResumeME
+  - AudioSourceLEv1
   layers:
   - Default
   - TransparentFX
