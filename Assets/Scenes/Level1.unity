@@ -5377,7 +5377,7 @@ GameObject:
   m_Layer: 0
   m_Name: NpcMoveSpotSara
   m_TagString: MoveSpotPoint
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23614,10 +23614,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 980088895}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: AttackPos
   m_TagString: PlayerII
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -30579,6 +30579,86 @@ Transform:
   m_Father: {fileID: 1958169771}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1330848708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1330848709}
+  - component: {fileID: 1330848710}
+  m_Layer: 0
+  m_Name: 83312900_3013821338651329_5884067773469949952_n
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1330848709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330848708}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.13, y: 4.47, z: 5.105957}
+  m_LocalScale: {x: 0.28, y: 0.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 530797704}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1330848710
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330848708}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 8781bcf0c7da6aa4c8fba2ebc081481e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12, y: 12}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1332947375
 GameObject:
   m_ObjectHideFlags: 0
@@ -33908,7 +33988,7 @@ SpriteRenderer:
   m_Size: {x: 12, y: 12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1546684437
@@ -65310,7 +65390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04478c3d894a97d4ba3d3e15b440026c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OverWolrd: {fileID: 0}
 --- !u!1 &2052288927
 GameObject:
   m_ObjectHideFlags: 0
@@ -66843,6 +66922,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Npc
       objectReference: {fileID: 0}
+    - target: {fileID: 472855152311406554, guid: 9ac8afdce1706c74e83b5566da4d0a9d,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 472855152311406558, guid: 9ac8afdce1706c74e83b5566da4d0a9d,
         type: 3}
       propertyPath: m_Simulated
@@ -66991,8 +67075,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000,
-        type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 492569434942456056, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_Layer
@@ -67102,7 +67185,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 2800000, guid: 2d707d19f1fbd2d4aa6234e7414c591f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_IsActive
@@ -67111,7 +67194,7 @@ PrefabInstance:
     - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3206562140645392872, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
@@ -67208,6 +67291,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveSpot
       objectReference: {fileID: 0}
+    - target: {fileID: 831824591269539397, guid: 7d0f09442eb07474da054227ae00d89d,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 831824591269539396, guid: 7d0f09442eb07474da054227ae00d89d,
         type: 3}
       propertyPath: m_LocalPosition.x
