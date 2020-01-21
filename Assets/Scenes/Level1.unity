@@ -4844,7 +4844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.45, y: -4.51}
+  m_AnchoredPosition: {x: 4.3, y: -11.7}
   m_SizeDelta: {x: 97, y: 98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &226734877
@@ -23614,10 +23614,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 980088895}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttackPos
   m_TagString: PlayerII
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -66922,11 +66922,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Npc
       objectReference: {fileID: 0}
-    - target: {fileID: 472855152311406554, guid: 9ac8afdce1706c74e83b5566da4d0a9d,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 472855152311406558, guid: 9ac8afdce1706c74e83b5566da4d0a9d,
         type: 3}
       propertyPath: m_Simulated
@@ -67075,7 +67070,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 492569434942456056, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_Layer
@@ -67185,7 +67181,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 2d707d19f1fbd2d4aa6234e7414c591f, type: 3}
     - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_IsActive
@@ -67194,7 +67190,7 @@ PrefabInstance:
     - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3206562140645392872, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
@@ -67291,12 +67287,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveSpot
       objectReference: {fileID: 0}
-    - target: {fileID: 831824591269539397, guid: 7d0f09442eb07474da054227ae00d89d,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000,
-        type: 0}
     - target: {fileID: 831824591269539396, guid: 7d0f09442eb07474da054227ae00d89d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67387,12 +67377,12 @@ PrefabInstance:
     - target: {fileID: 9142439264007708762, guid: aef9635756f08c145a601bdfe76240c4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.4
+      value: -3.73
       objectReference: {fileID: 0}
     - target: {fileID: 9142439264007708762, guid: aef9635756f08c145a601bdfe76240c4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.8
+      value: -7.51
       objectReference: {fileID: 0}
     - target: {fileID: 9142439264007708762, guid: aef9635756f08c145a601bdfe76240c4,
         type: 3}
@@ -67499,6 +67489,11 @@ PrefabInstance:
       propertyPath: rAndomPatrol
       value: 
       objectReference: {fileID: 1367457817}
+    - target: {fileID: 9142439264007708765, guid: aef9635756f08c145a601bdfe76240c4,
+        type: 3}
+      propertyPath: _chaseRaidus
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6269325141781722598, guid: aef9635756f08c145a601bdfe76240c4,
         type: 3}
       propertyPath: moveSpot
