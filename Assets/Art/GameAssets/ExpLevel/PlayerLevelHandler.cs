@@ -26,7 +26,7 @@ public class PlayerLevelHandler : MonoBehaviour
         if (batController.enemyHealtSystem.GetHealth() <= 1 && loopcontrol == true)
         {
             playerLevelSytem.AddExperience(batController.expAmount);
-            questRequirements.text = "Bat Killed : 1  Dziekujemy o to twoja nagroda";
+            questRequirements.text = "Bat Killed : 1  Dziekujemy!";
             Finish.text = "QUEST FINISHED!";
             Finish.color = Color.green;
             
