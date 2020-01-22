@@ -89,7 +89,7 @@ public class NpcMovment : MonoBehaviour
             questLog.SetActive(true);
             
             anim.SetBool("isMoving", false);
-
+                
 
         }
     }
