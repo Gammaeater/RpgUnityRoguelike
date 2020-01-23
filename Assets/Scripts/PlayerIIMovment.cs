@@ -90,18 +90,18 @@ public class PlayerIIMovment : MonoBehaviour
     {
         if (col.tag == "Bullet" || col.name == "Bullet(Clone)")
         {
-            playerHealtShystem.Damage(10f);
             Debug.Log("Shoters Controll Logg");
+            playerHealtShystem.Damage(1f);
            
 
 
 
 
         }
-
-
-
     }
+
+
+
 
 
 

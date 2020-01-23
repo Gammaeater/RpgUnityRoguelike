@@ -22,7 +22,7 @@ public class ShotWapon : MonoBehaviour
     void Start()
     {
         targetBat = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
-        // firePoint = GameObject.FindWithTag("PlayerII").GetComponent("FirePoint").transform;
+       
     }
     // Update is called once per frame
     void Update()
@@ -35,13 +35,12 @@ public class ShotWapon : MonoBehaviour
                 if (Time.time > timeSinceLastRangeShot + TimeBetweenRangeShots)
                 {
 
-                  // _animator.SetBool("attacking", true);
+                  
                     Shoot();
 
 
 
-
-                    //_animator.SetBool("attacking", false);
+                    
 
                     timeSinceLastRangeShot = Time.time;
 
