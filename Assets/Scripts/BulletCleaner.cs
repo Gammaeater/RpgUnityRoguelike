@@ -6,7 +6,7 @@ public class BulletCleaner : MonoBehaviour
 
     void Start()
     {
-        _playertarget = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
+       // _playertarget = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
     }
 
     void Update()

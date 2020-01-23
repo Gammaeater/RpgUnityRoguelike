@@ -6361,7 +6361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &319114400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28917,7 +28917,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241521221}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e4dfd672e48825d4a9d1b2ff40058fdf, type: 3}
@@ -65306,16 +65306,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f147fbfefd03a48ba513b33b9ae020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 212656159424102278, guid: fbd66c896655aad479463677c23fde5e,
-    type: 3}
-  firePoint: {fileID: 6005816257259914322}
-  targetBat: {fileID: 3017805453155673219}
   TimeBetweenRangeShots: 2
   bulletSpeed: 40
-  moveDirection: {x: 0, y: 0}
-  lookAngle: {x: 0, y: 0}
+  bulletPrefab: {fileID: 212656159424102278, guid: fbd66c896655aad479463677c23fde5e,
+    type: 3}
+  targetBat: {fileID: 3017805453155673219}
   lookDirection: {x: 0, y: 0}
   _animator: {fileID: 2044331543}
+  firePoint: {fileID: 6005816257259914322}
+  moveDirection: {x: 0, y: 0}
 --- !u!58 &2044331549
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -67080,6 +67079,51 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: attak
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: currentState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: currentHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: playerHealtShystem
+      value: 
+      objectReference: {fileID: 2044331550}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: healtText
+      value: 
+      objectReference: {fileID: 1455022861}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: enemyAttack
+      value: 
+      objectReference: {fileID: 3017805453155673219}
     - target: {fileID: 492569434942456052, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67135,70 +67179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420031}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+    - target: {fileID: 492569434942456055, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: attak
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: currentState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: currentHealth
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: playerHealtShystem
-      value: 
-      objectReference: {fileID: 2044331550}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: healtText
-      value: 
-      objectReference: {fileID: 1455022861}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: enemyAttack
-      value: 
-      objectReference: {fileID: 3017805453155673219}
-    - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 2800000, guid: 2d707d19f1fbd2d4aa6234e7414c591f, type: 3}
-    - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3206562140645392872, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: bulletPrefab
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6005816257259914322, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
@@ -67214,6 +67198,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 492569434942456058, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
@@ -67255,16 +67264,6 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 492569434942456054, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_UsedByEffector
@@ -67274,6 +67273,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206562140645392872, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2800000, guid: 2d707d19f1fbd2d4aa6234e7414c591f, type: 3}
+    - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3206562140645392872, guid: 707c932c54c19df408f155a391c21730, type: 3}

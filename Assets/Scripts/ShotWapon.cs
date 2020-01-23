@@ -4,24 +4,20 @@ public class ShotWapon : MonoBehaviour
 
 
 {
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    public Bat targetBat;
+    private float angle;
     public float TimeBetweenRangeShots;
     private float timeSinceLastRangeShot;
+
     public float bulletSpeed;
-    public Vector2 moveDirection;
-    public Vector2 lookAngle;
+    public GameObject bulletPrefab;
+    public Bat targetBat;
     public Vector2 lookDirection;
     public Animator _animator;
-
-
-
+    public Transform firePoint;
     private Transform target;
+    public Vector2 moveDirection;
     private Vector3 targetPos;
     private Vector3 thisPos;
-    private float angle;
-
 
     void Start()
     {
