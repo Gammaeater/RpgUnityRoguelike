@@ -4,29 +4,25 @@ public class ShotWapon : MonoBehaviour
 
 
 {
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    public Bat targetBat;
+    private float angle;
     public float TimeBetweenRangeShots;
     private float timeSinceLastRangeShot;
+
     public float bulletSpeed;
-    public Vector2 moveDirection;
-    public Vector2 lookAngle;
+    public GameObject bulletPrefab;
+    public Bat targetBat;
     public Vector2 lookDirection;
     public Animator _animator;
-
-
-
+    public Transform firePoint;
     private Transform target;
+    public Vector2 moveDirection;
     private Vector3 targetPos;
     private Vector3 thisPos;
-    private float angle;
-
 
     void Start()
     {
         targetBat = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
-        // firePoint = GameObject.FindWithTag("PlayerII").GetComponent("FirePoint").transform;
+       
     }
     // Update is called once per frame
     void Update()
@@ -39,13 +35,12 @@ public class ShotWapon : MonoBehaviour
                 if (Time.time > timeSinceLastRangeShot + TimeBetweenRangeShots)
                 {
 
-                  // _animator.SetBool("attacking", true);
+                  
                     Shoot();
 
 
 
-
-                    //_animator.SetBool("attacking", false);
+                    
 
                     timeSinceLastRangeShot = Time.time;
 

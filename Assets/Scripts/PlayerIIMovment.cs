@@ -25,10 +25,10 @@ public class PlayerIIMovment : MonoBehaviour
     public HealthSystem playerHealtShystem;
     private Transform selectedUnit;
     private Bat enemy;
-  
+
     void Start()
     {
-        enemy = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
+
 
     }
 
@@ -53,8 +53,8 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
-     
-     
+
+
 
 
 
@@ -69,8 +69,6 @@ public class PlayerIIMovment : MonoBehaviour
 
 
         rb.MovePosition(rb.position + movment * moveSpeed * Time.fixedDeltaTime);
-       
-        
 
 
 
@@ -78,13 +76,30 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
+
+
+
+
+
+
+    }
+
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Bullet" || col.name == "Bullet(Clone)")
+        {
+            Debug.Log("Shoters Controll Logg");
+            playerHealtShystem.Damage(1f);
+           
 
 
 
 
         }
+    }
 
-    
 
 
 
