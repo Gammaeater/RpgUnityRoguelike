@@ -3,7 +3,6 @@
 public class NpcMovment : MonoBehaviour
 {
     public Animator anim;
-    public PlayerIIMovment playerTarget;
     [SerializeField]
     public NpcSara myContoller;
     public Transform moveSpot;

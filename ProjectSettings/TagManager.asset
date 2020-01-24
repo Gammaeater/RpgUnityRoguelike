@@ -17,6 +17,7 @@ TagManager:
   - ResumeME
   - AudioSourceLEv1
   - PlayerII2lev
+  - MoveSpotNoemi
   layers:
   - Default
   - TransparentFX
