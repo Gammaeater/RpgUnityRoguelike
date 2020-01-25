@@ -2,10 +2,10 @@
 
 public class NpcAI : MonoBehaviour
 {
-    public Animator anim;
+    public Animator Noemianim;
    
     [SerializeField]
-    public NpcAI myContoller;
+    
     public Transform moveSpot;
     public Rigidbody2D myRbBodyNpc;
     public Transform myPosTransform;
@@ -31,7 +31,7 @@ public class NpcAI : MonoBehaviour
 
         patrolWaitTime = patrolStartWaitTime;
         moveSpot.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
-        myContoller = GameObject.FindWithTag("Npc").GetComponent<NpcAI>();
+       // myContoller = GameObject.FindWithTag("Npc").GetComponent<NpcAI>();
         myMovePointTransform = GameObject.FindWithTag("MoveSpotNoemi").transform;
         
 
@@ -42,14 +42,29 @@ public class NpcAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
-       // anim.SetFloat("Vertical", myMovePointTransform.position.normalized.y);
-       // anim.SetFloat("Horizontal", myMovePointTransform.position.normalized.x);
+        Noemianim.SetFloat("Horizontal", transform.position.normalized.x);
+
+        Noemianim.SetFloat("Vertical", transform.position.normalized.y);
+
 
         if (busy == false)
         {
-            
+
+
+            Noemianim.SetBool("IsMoving", true);
             transform.position = Vector2.MoveTowards(transform.position, moveSpot.position, patrolSpeed * Time.deltaTime);
+           //if(myMovePointTransform.position.normalized.x > 0)
+           //{
+               
+           //    Noemianim.SetBool("IsmovingRight", true);
+           //     Debug.Log("Cheeeeeeeeeckiiiiiiiiiin Workin1");
+           // }
+           //else if (myMovePointTransform.position.normalized.x < transform.position.normalized.x)
+           //{
+               
+           //    Noemianim.SetBool("IsmovingLeft", true);
+           //     Debug.Log("Cheeeeeeeeeckiiiiiiiiiin Workin2");
+           // }
 
             if (Vector2.Distance(transform.position, moveSpot.position) < 0.2f)
             {
@@ -59,25 +74,17 @@ public class NpcAI : MonoBehaviour
                     moveSpot.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
 
 
-                    if (Vector3.Dot(transform.right, moveSpot.position) > 0)
-                    {   anim.SetBool("IsmovingLeft", false);
-                        anim.SetBool("IsmovingRight", true); //Is moving right
-                        
-                    }
-                    else
-                    {
-                        anim.SetBool("IsmovingRight", false);
-                        anim.SetBool("IsmovingLeft", true);
-                    }
-
+            
 
                     patrolWaitTime = patrolStartWaitTime;
-                    anim.SetBool("isMoving", false);
+                    Noemianim.SetBool("IsMoving", false);
+                    Noemianim.SetBool("IsmovingLeft", false);
+                    Noemianim.SetBool("IsmovingRight", false);
                 }
                 else
                 {
                     patrolWaitTime -= Time.deltaTime;
-                    anim.SetBool("isMoving", false);
+                    Noemianim.SetBool("IsMoving", false);
                 }
             }
             else
@@ -88,29 +95,31 @@ public class NpcAI : MonoBehaviour
         else
         {
             myRbBodyNpc.velocity = Vector2.zero;
-            return;
+           return;
         }
 
     }
 
-    //void OnTriggerStay2D(Collider2D _other)
-    //{
+  void OnTriggerStay2D(Collider2D _player)
+  {
 
-    //    if (_other.gameObject.tag == "PlayerII")
-    //    {
-    //        busy = true;
-    //        questLog.SetActive(true);
+      if (_player.gameObject.tag == "PlayerII2lev")
+      {
+          busy = true;
+          questLog.SetActive(true);
 
-    //        anim.SetBool("isMoving", false);
+            Noemianim.SetBool("isMoving", false);
+            Debug.Log("Its Work!!!");
 
 
-    //    }
-    //}
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    questLog.SetActive(false);
-    //    anim.SetBool("isMoving", true);
-    //    busy = false;
-    //}
+      }
+  }
+  void OnTriggerExit2D(Collider2D other)
+  {
+      questLog.SetActive(false);
+        Noemianim.SetBool("isMoving", true);
+        Debug.Log("Its Work!!222!");
+        busy = false;
+  }
 }
 

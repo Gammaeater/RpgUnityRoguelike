@@ -23,7 +23,7 @@ public class NpcMovment : MonoBehaviour
     public bool busy;
     public bool canMove;
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update    
     void Awake()
     {
         busy = false;
