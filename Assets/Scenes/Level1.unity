@@ -64998,19 +64998,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e4acd8394a50e429a48eaeba6e4697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _batTarget: {fileID: 3017805453155673219}
-  TimeBetweenShots: 2
-  timeSinceLastShot: 0
-  position: {fileID: 2044331545}
-  popUpprefab: {fileID: 0}
-  _timePrefabSpawn: 0
-  _player: {fileID: 2044331546}
-  _baseAtack: 2
-  _playerRandomHit: 0
-  _playerFullAttack: 0
   healtText: {fileID: 1455022861}
   expirence: {fileID: 800604747}
   level: {fileID: 807664192}
+  TimeBetweenShots: 2
+  timeSinceLastShot: 0
+  _timePrefabSpawn: 0
+  _baseAtack: 2
+  _playerRandomHit: 0
+  _playerFullAttack: 0
+  _batTarget: {fileID: 3017805453155673219}
+  position: {fileID: 2044331545}
+  popUpprefab: {fileID: 0}
+  _player: {fileID: 2044331546}
   playerHealtShystem: {fileID: 2044331550}
   playerlevelSystem: {fileID: 2044331552}
 --- !u!95 &2044331543 stripped
@@ -67446,8 +67446,9 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Witaj wojowniku , prsze pomo\u017C nam ! Nasz\u0105 wiosk\u0119 co chwile
         atakuje Krwio\u017Cercy  Nietoprzez ... Zabij go a nagroda ci\u0119 nie omnie
-        ! Aby Znale\u017Cc potfora pod\u0105zaj szlakiem ... a\u017C dojdziesz na
-        polane kt\xF3r\u0105 wybra\u0142 na swoje legowsiko ! Powodzenia !"
+        ! Aby Znale\u017Cc potwora pod\u0105zaj szlakiem  na zach\xF3d ... a\u017C
+        dojdziesz na polane kt\xF3r\u0105 wybra\u0142 na swoje legowsiko ! Powodzenia
+        !"
       objectReference: {fileID: 0}
     - target: {fileID: 7590271851836004181, guid: b1d732437788818419f14d49d8ba7eb0,
         type: 3}

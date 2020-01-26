@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: bdc62c81e398414458266c2e3837ea1e
+  - enabled: 1
+    path: Assets/Scenes/MinobossLevel.unity
+    guid: 3fdb80f0e496aef449ddd24d6df57d2e
   m_configObjects: {}
