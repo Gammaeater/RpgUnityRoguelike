@@ -7,26 +7,23 @@ public class PlayerAttackmele : MonoBehaviour
 {
 
 
-    public Bat _batTarget;
-    public float TimeBetweenShots;
-    public float timeSinceLastShot;
-    public Transform position;
-    private float distance;
-    public GameObject popUpprefab;
-    public float _timePrefabSpawn;
-    public PlayerIIMovment _player;
-
-
-    public float _baseAtack;
-    public float _playerRandomHit;
-    public float _playerFullAttack;
     [SerializeField] private Text healtText;
     [SerializeField] private Text expirence;
     [SerializeField] private Text level;
     [SerializeField]
+    public float TimeBetweenShots;
+    public float timeSinceLastShot;
+    public float _timePrefabSpawn;
+    private float distance;
+    public float _baseAtack;
+    public float _playerRandomHit;
+    public float _playerFullAttack;
+    public Bat _batTarget;
+    public Transform position;
+    public GameObject popUpprefab;
+    public PlayerIIMovment _player;
     public HealthSystem playerHealtShystem;
     public LevelSystem playerlevelSystem;
-
     public Transform MyTarget { get; set; }
 
 
@@ -60,7 +57,7 @@ public class PlayerAttackmele : MonoBehaviour
 
 
 
-                Debug.Log("Ataaaaaaaaaaaaaaaakt1");
+                
 
 
 

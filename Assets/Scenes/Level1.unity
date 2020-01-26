@@ -64998,19 +64998,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e4acd8394a50e429a48eaeba6e4697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _batTarget: {fileID: 3017805453155673219}
-  TimeBetweenShots: 2
-  timeSinceLastShot: 0
-  position: {fileID: 2044331545}
-  popUpprefab: {fileID: 0}
-  _timePrefabSpawn: 0
-  _player: {fileID: 2044331546}
-  _baseAtack: 2
-  _playerRandomHit: 0
-  _playerFullAttack: 0
   healtText: {fileID: 1455022861}
   expirence: {fileID: 800604747}
   level: {fileID: 807664192}
+  TimeBetweenShots: 2
+  timeSinceLastShot: 0
+  _timePrefabSpawn: 0
+  _baseAtack: 2
+  _playerRandomHit: 0
+  _playerFullAttack: 0
+  _batTarget: {fileID: 3017805453155673219}
+  position: {fileID: 2044331545}
+  popUpprefab: {fileID: 0}
+  _player: {fileID: 2044331546}
   playerHealtShystem: {fileID: 2044331550}
   playerlevelSystem: {fileID: 2044331552}
 --- !u!95 &2044331543 stripped
