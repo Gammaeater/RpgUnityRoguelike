@@ -65009,8 +65009,8 @@ MonoBehaviour:
   _playerRandomHit: 0
   _playerFullAttack: 0
   healtText: {fileID: 1455022861}
-  expirence: {fileID: 757048861}
-  level: {fileID: 1464743317}
+  expirence: {fileID: 800604747}
+  level: {fileID: 807664192}
   playerHealtShystem: {fileID: 2044331550}
   playerlevelSystem: {fileID: 2044331552}
 --- !u!95 &2044331543 stripped

@@ -77,9 +77,9 @@ public class NpcAI : MonoBehaviour
             
 
                     patrolWaitTime = patrolStartWaitTime;
-                    Noemianim.SetBool("IsMoving", false);
-                    Noemianim.SetBool("IsmovingLeft", false);
-                    Noemianim.SetBool("IsmovingRight", false);
+                    //Noemianim.SetBool("IsMoving", false);
+                    //Noemianim.SetBool("IsmovingLeft", false);
+                    //Noemianim.SetBool("IsmovingRight", false);
                 }
                 else
                 {
