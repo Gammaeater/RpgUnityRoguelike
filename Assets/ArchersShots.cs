@@ -15,13 +15,14 @@ public class ArchersShots : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.FindWithTag("PlayerII2lev").GetComponent("PlayerIIMovment") as PlayerIIMovment;
+      
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        //_player = GameObject.FindWithTag("PlayerII2lev").GetComponent("PlayerIIMovment") as PlayerIIMovment;
         float _distance = Vector3.Distance(_player.transform.position, transform.position);
 
         if (_distance < 10f)

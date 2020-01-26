@@ -102,7 +102,24 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
+//public void UpdateHealth()
+//    {
 
+//        healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
+
+
+
+
+
+
+
+//    }
+//    public void UpdateExpirience()
+//    {
+//        expirence.text = playerlevelSystem.GetExpirience().ToString("0");
+//        level.text = playerlevelSystem.GetLevelNumber().ToString("0");
+
+//    }
 
 
 
