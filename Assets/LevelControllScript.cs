@@ -8,7 +8,7 @@ public class LevelControllScript : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D col2)
     {
-        if (col2.tag == "PlayerII")
+        if (col2.tag == "PlayerII" || col2.tag == "PlayerII2lev")
         {
             SceneManager.LoadScene(LevelName);
             Debug.Log("debug  dzialanie colidera?");

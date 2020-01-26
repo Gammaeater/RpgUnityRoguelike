@@ -67446,8 +67446,9 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Witaj wojowniku , prsze pomo\u017C nam ! Nasz\u0105 wiosk\u0119 co chwile
         atakuje Krwio\u017Cercy  Nietoprzez ... Zabij go a nagroda ci\u0119 nie omnie
-        ! Aby Znale\u017Cc potfora pod\u0105zaj szlakiem ... a\u017C dojdziesz na
-        polane kt\xF3r\u0105 wybra\u0142 na swoje legowsiko ! Powodzenia !"
+        ! Aby Znale\u017Cc potwora pod\u0105zaj szlakiem  na zach\xF3d ... a\u017C
+        dojdziesz na polane kt\xF3r\u0105 wybra\u0142 na swoje legowsiko ! Powodzenia
+        !"
       objectReference: {fileID: 0}
     - target: {fileID: 7590271851836004181, guid: b1d732437788818419f14d49d8ba7eb0,
         type: 3}

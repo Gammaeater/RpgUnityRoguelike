@@ -11,15 +11,11 @@ public class Bat : EnemyController
     public Transform _homePosition;
     public Animator _anim;
     public PlayerIIMovment _playerTarget;
-
-
     public float TimeBetweenShots;
     private float timeSinceLastShot;
     public Bat ownBat;
     public float actualHealth;
     public Transform rAndomPatrol;
-
- 
     public GameObject popUpprefab;
     public float randomBonusHit;
     public float batfullAttack;

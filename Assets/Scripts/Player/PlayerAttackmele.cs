@@ -89,7 +89,7 @@ public class PlayerAttackmele : MonoBehaviour
 
 
         _batTarget.enemyHealtSystem.Damage(damage);
-        Debug.Log("Ataaaaaaaaaaaaaaaakt");
+        
 
 
 
