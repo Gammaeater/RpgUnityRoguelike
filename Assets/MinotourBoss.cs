@@ -9,6 +9,7 @@ public class MinotourBoss : MonoBehaviour
     public float attackRadius;
     public float TimeBetweenShots;
     private float timeSinceLastShot;
+    public float comboAttackTimme;
     public Animator anim;
     public PlayerIIMovment _playerTarget;
     public float moveSpeed;
@@ -21,7 +22,7 @@ public class MinotourBoss : MonoBehaviour
 
 
         _playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
-
+     
     }
 
     // Update is called once per frame
@@ -30,7 +31,10 @@ public class MinotourBoss : MonoBehaviour
         movment.x = transform.position.x;
         playermovment.x = _target.position.x;
 
-        
+        anim.SetBool("AttackLEft1", false);
+        anim.SetBool("AttackRight1", false);
+        anim.SetBool("AttackLEft2", false);
+        anim.SetBool("AttackRight2", false);
 
         //anim.SetFloat("Horizontal", movment.normalized.x);
         //anim.SetFloat("Vertical", movment.y);
@@ -38,31 +42,39 @@ public class MinotourBoss : MonoBehaviour
         CheckDistance();
         float distance = Vector3.Distance(_target.transform.position, transform.position);
 
-
-
-        if (distance < 10.5f)
+        InvokeRepeating("Attack2", 10, 2);
+        InvokeRepeating("Attack", 20, 1);
+        InvokeRepeating("Attack2", 40,2);
+        
+        anim.SetBool("isMoving", true);
+        if (distance < 4f)
 
 
         {
             Debug.Log("Distane checkinnnnnnnnnnnnnnnnnnnnnnng");
 
-           //anim.SetBool("isMoving", false);
+
+            anim.SetBool("isMoving", false);
+            anim.SetBool("RunLeft", false);
+            anim.SetBool("RunRight", false);
+
 
             if (Time.time > timeSinceLastShot + TimeBetweenShots)
             {
-
+                
                 //StartCoroutine(DmgSpawn());
-                Attack(2f);
+                 Attack();
+
                 Debug.Log("Its works?");
                 //Tount();
 
 
                 timeSinceLastShot = Time.time;
 
-
-
+               
 
             }
+          
 
 
 
@@ -75,10 +87,8 @@ public class MinotourBoss : MonoBehaviour
 
 
         }
-        else
-        {
-            anim.SetBool("isMoving", true);
-        }
+
+
 
 
 
@@ -97,13 +107,14 @@ public class MinotourBoss : MonoBehaviour
         {
 
             transform.position = Vector2.MoveTowards(transform.position, _target.position, moveSpeed * Time.deltaTime);
-            anim.SetBool("isMoving", true);
+            //anim.SetBool("isMoving", true);
 
 
             if (movment.x < playermovment.x)
             {
                 anim.SetBool("RunLeft", false);
                 anim.SetBool("RunRight", true);
+                anim.SetBool("Playerontheleft", false);
 
 
             }
@@ -112,27 +123,54 @@ public class MinotourBoss : MonoBehaviour
                 anim.SetBool("RunRight", false);
                 anim.SetBool("RunLeft", true);
 
+                anim.SetBool("Playerontheleft", true);
 
 
 
 
 
             }
-           // anim.SetBool("isMoving", false);
+            // anim.SetBool("isMoving", false);
 
 
 
         }
     }
 
-    public void Attack(float damage)
+    public void Attack()
     {
+        anim.SetBool("AttackLEft2", false);
+        anim.SetBool("AttackRight2", false);
+        if (movment.x < playermovment.x)
+        {
+            anim.SetBool("AttackLEft1", false);
+
+            anim.SetBool("AttackRight1", true);
+            // anim.SetBool("Playerontheleft", false);
+            Debug.Log("Testing code attack right 1");
+
+
+        }
+        else
+        {
+            anim.SetBool("AttackRight1", false);
+            anim.SetBool("AttackLEft1", true);
+
+            Debug.Log("Testing code attack left 1");
+
+            // anim.SetBool("Playerontheleft", true);
+
+
+
+
+
+        }
 
         //randomBonusHit = (float)Random.Range(1, 5);
         // batfullAttack = baseAtack + randomBonusHit;
 
         //_playerTarget.playerHealtShystem.Damage(damage);
-
+        _playerTarget.playerHealtShystem.Damage(15);
 
 
 
@@ -140,15 +178,40 @@ public class MinotourBoss : MonoBehaviour
 
 
     }
-
-
-    public void Attack2(float damage)
+    void  Attack2()
     {
 
-        //randomBonusHit = (float)Random.Range(1, 5);
-        // batfullAttack = baseAtack + randomBonusHit;
+        anim.SetBool("AttackLEft1", false);
+        anim.SetBool("AttackRight1", false);
 
-        // _playerTarget.playerHealtShystem.Damage(damage);
+        if (movment.x < playermovment.x)
+        {
+            anim.SetBool("AttackLEft2", false);
+
+            anim.SetBool("AttackRight2", true);
+            // anim.SetBool("Playerontheleft", false);
+            Debug.Log("Testing code attack right 1");
+
+
+        }
+        else
+        {
+            anim.SetBool("AttackRight2", false);
+            anim.SetBool("AttackLEft2", true);
+
+            Debug.Log("Testing code attack left 1");
+
+            // anim.SetBool("Playerontheleft", true);
+
+
+
+
+
+        }
+
+        //randomBonusHit = (float)Random.Range(1, 5);
+
+        _playerTarget.playerHealtShystem.Damage(15);
 
 
 
@@ -157,6 +220,10 @@ public class MinotourBoss : MonoBehaviour
 
 
     }
+
+
+
+ 
 
     public void Tount()
     {
@@ -172,24 +239,7 @@ public class MinotourBoss : MonoBehaviour
         }
 
     }
-    public void CheckHoritontalPOosition()
-    {
-        if (movment.x < playermovment.x)
-        {
-            anim.SetBool("isMoving", true);
-            anim.SetBool("RunLeft", false);
-            anim.SetBool("RunRight", true);
 
-
-        }
-        else
-        {
-            anim.SetBool("RunRight", false);
-            anim.SetBool("RunLeft", true);
-
-
-        }
-    }
 }
 
 
