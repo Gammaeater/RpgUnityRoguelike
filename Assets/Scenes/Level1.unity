@@ -66670,51 +66670,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420031}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: attak
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: currentState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: currentHealth
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: playerHealtShystem
-      value: 
-      objectReference: {fileID: 2044331550}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: healtText
-      value: 
-      objectReference: {fileID: 1455022861}
-    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: enemyAttack
-      value: 
-      objectReference: {fileID: 3017805453155673219}
     - target: {fileID: 492569434942456052, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66770,36 +66725,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456055, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 492569434942456058, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -66849,6 +66774,81 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: attak
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: currentState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: currentHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: playerHealtShystem
+      value: 
+      objectReference: {fileID: 2044331550}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: healtText
+      value: 
+      objectReference: {fileID: 1455022861}
+    - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: enemyAttack
+      value: 
+      objectReference: {fileID: 3017805453155673219}
+    - target: {fileID: 492569434942456055, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456053, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1978308262055817361, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
