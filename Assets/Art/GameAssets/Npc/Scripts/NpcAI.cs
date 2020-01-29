@@ -53,18 +53,7 @@ public class NpcAI : MonoBehaviour
 
             Noemianim.SetBool("IsMoving", true);
             transform.position = Vector2.MoveTowards(transform.position, moveSpot.position, patrolSpeed * Time.deltaTime);
-           //if(myMovePointTransform.position.normalized.x > 0)
-           //{
-               
-           //    Noemianim.SetBool("IsmovingRight", true);
-           //     Debug.Log("Cheeeeeeeeeckiiiiiiiiiin Workin1");
-           // }
-           //else if (myMovePointTransform.position.normalized.x < transform.position.normalized.x)
-           //{
-               
-           //    Noemianim.SetBool("IsmovingLeft", true);
-           //     Debug.Log("Cheeeeeeeeeckiiiiiiiiiin Workin2");
-           // }
+    
 
             if (Vector2.Distance(transform.position, moveSpot.position) < 0.2f)
             {
@@ -77,9 +66,7 @@ public class NpcAI : MonoBehaviour
             
 
                     patrolWaitTime = patrolStartWaitTime;
-                    //Noemianim.SetBool("IsMoving", false);
-                    //Noemianim.SetBool("IsmovingLeft", false);
-                    //Noemianim.SetBool("IsmovingRight", false);
+           
                 }
                 else
                 {
@@ -109,7 +96,7 @@ public class NpcAI : MonoBehaviour
           questLog.SetActive(true);
 
             Noemianim.SetBool("isMoving", false);
-            Debug.Log("Its Work!!!");
+
 
 
       }

@@ -43,7 +43,12 @@ public class MinotourBoss : EnemyController
         healthBar.value = minoHealtShystem.GetHealth();
         movment.x = transform.position.x;
         playermovment.x = _target.position.x;
+        if(minoHealtShystem.GetHealth() <= 50)
+        {
+            anim.SetBool("Dead", true);
+            healthBar.gameObject.SetActive(false);
 
+        }
         anim.SetBool("AttackLEft1", false);
         anim.SetBool("AttackRight1", false);
         anim.SetBool("AttackLEft2", false);
@@ -79,7 +84,7 @@ public class MinotourBoss : EnemyController
                 //StartCoroutine(DmgSpawn());
                 Attack(minoFullAttack);
 
-                Debug.Log("Its works?");
+                
                 //Tount();
 
 
@@ -169,7 +174,7 @@ public class MinotourBoss : EnemyController
             anim.SetBool("AttackRight1", false);
             anim.SetBool("AttackLEft1", true);
 
-            Debug.Log("Testing code attack left 1");
+            
 
 
 
@@ -287,7 +292,7 @@ public class MinotourBoss : EnemyController
         //}
         switch (col.tag)
         {
-            case ( "Bullet" ):
+            case ( "Bullet"):
                 minoHealtShystem.Damage(50f);
                 break;
             case ("Bullet(Clone)"):
