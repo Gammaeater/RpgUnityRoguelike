@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+
 
 
 public enum PlayerState
@@ -21,6 +23,7 @@ public class PlayerIIMovment : MonoBehaviour
     public bool attak;
     public Bat enemyAttack;
     public float actualHP;
+    public Transform MyTarget { get; set; }
 
     public HealthSystem playerHealtShystem;
     private Transform selectedUnit;
@@ -51,12 +54,17 @@ public class PlayerIIMovment : MonoBehaviour
         animator.SetFloat("Speed", movment.sqrMagnitude);
 
 
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+           
+            Haste();
+
+        }
 
 
 
 
 
-        
 
 
 
@@ -92,7 +100,7 @@ public class PlayerIIMovment : MonoBehaviour
         {
             Debug.Log("Shoters Controll Logg");
             playerHealtShystem.Damage(1f);
-           
+
 
 
 
@@ -100,26 +108,30 @@ public class PlayerIIMovment : MonoBehaviour
         }
     }
 
-
-
-//public void UpdateHealth()
-//    {
-
-//        healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
-
+    void Haste()
+    {
+        moveSpeed += 3f;
+        StartCoroutine(Movespeednormal());
 
 
 
 
 
 
-//    }
-//    public void UpdateExpirience()
-//    {
-//        expirence.text = playerlevelSystem.GetExpirience().ToString("0");
-//        level.text = playerlevelSystem.GetLevelNumber().ToString("0");
+        IEnumerator Movespeednormal()
+        {
+            yield return new WaitForSeconds(2);
+            moveSpeed = 5f;
 
-//    }
+
+        }
+
+
+
+
+    }
+
+
 
 
 

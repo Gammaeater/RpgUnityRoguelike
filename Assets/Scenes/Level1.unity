@@ -18800,7 +18800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57.1, y: -5.7}
+  m_AnchoredPosition: {x: 10.3, y: -4.8}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &757048861
@@ -19847,8 +19847,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -33.6}
-  m_SizeDelta: {x: 160, y: 24.200012}
+  m_AnchoredPosition: {x: 140.55, y: -44.49}
+  m_SizeDelta: {x: 279.89, y: 31.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &800604747
 MonoBehaviour:
@@ -20168,8 +20168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 51.75, y: -62.86}
-  m_SizeDelta: {x: 103.5, y: 26.21}
+  m_AnchoredPosition: {x: 91.13, y: -83.02}
+  m_SizeDelta: {x: 181.06, y: 34.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &807664192
 MonoBehaviour:
@@ -26694,8 +26694,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 33.5, y: -12.6}
-  m_SizeDelta: {x: 67, y: 25.2}
+  m_AnchoredPosition: {x: 57.8, y: -15.79}
+  m_SizeDelta: {x: 117.21, y: 33.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124272314
 MonoBehaviour:
@@ -28812,7 +28812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1241521222
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32176,8 +32176,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -13.200012}
-  m_SizeDelta: {x: 47.62, y: 25.2}
+  m_AnchoredPosition: {x: 124.6, y: -16.59}
+  m_SizeDelta: {x: 83.3, y: 33.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1455022861
 MonoBehaviour:
@@ -32335,7 +32335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 42.4, y: 0.00002670288}
+  m_AnchoredPosition: {x: 8.7, y: -0.000024795532}
   m_SizeDelta: {x: 100.74, y: 8.3499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464743317
@@ -33360,7 +33360,7 @@ MonoBehaviour:
   ray: {fileID: 2044331545}
   player: {fileID: 2044331542}
   _enemy: {fileID: 3017805453155673219}
-  _enemy2: {fileID: 0}
+  bossMino: {fileID: 0}
 --- !u!4 &1524453547
 Transform:
   m_ObjectHideFlags: 0
@@ -33416,7 +33416,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 34
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -64999,8 +64999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healtText: {fileID: 1455022861}
-  expirence: {fileID: 800604747}
-  level: {fileID: 807664192}
+  expirence: {fileID: 757048861}
+  level: {fileID: 1464743317}
   TimeBetweenShots: 2
   timeSinceLastShot: 0
   _timePrefabSpawn: 0
@@ -66733,7 +66733,7 @@ PrefabInstance:
     - target: {fileID: 492569434942456058, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
       propertyPath: m_Mass
-      value: 0.36549383
+      value: 0.19785182
       objectReference: {fileID: 0}
     - target: {fileID: 492569434942456058, guid: 707c932c54c19df408f155a391c21730,
         type: 3}
@@ -66774,6 +66774,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456054, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492569434942456054, guid: 707c932c54c19df408f155a391c21730,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 492569434942456059, guid: 707c932c54c19df408f155a391c21730,
         type: 3}

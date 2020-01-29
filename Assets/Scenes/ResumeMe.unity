@@ -917,7 +917,7 @@ MonoBehaviour:
     Poruszanie : W S A D
 
 
-    Target Enemy: prawy przycisk myszki
+    Target Enemy: lewy przycisk myszki
 
 
     postaraj sie utrzymac przeciwnika w dystansie
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -110.14392, z: -69.54895, w: 0}
   m_textInfo:
     textComponent: {fileID: 1695912907}
-    characterCount: 112
+    characterCount: 111
     spriteCount: 0
     spaceCount: 21
     wordCount: 17

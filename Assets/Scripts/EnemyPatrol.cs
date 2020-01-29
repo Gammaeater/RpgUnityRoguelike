@@ -71,8 +71,5 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Debug.Log("Twoj staryyyyyyyyyyyyyyy je załatke");
-    }
+  
 }
