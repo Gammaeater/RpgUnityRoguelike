@@ -18,6 +18,9 @@ TagManager:
   - AudioSourceLEv1
   - PlayerII2lev
   - MoveSpotNoemi
+  - PlayerBossLevel
+  - BossMino
+  - Magic
   layers:
   - Default
   - TransparentFX
