@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
@@ -14,13 +12,14 @@ public class GameContoller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateHealth();
+        UpdateExpirience();
     }
 
 
@@ -30,8 +29,18 @@ public class GameContoller : MonoBehaviour
         healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
 
 
-               
+
 
 
     }
+
+
+    public void UpdateExpirience()
+    {
+        expirence.text = playerlevelSystem.GetExpirience().ToString("0");
+        level.text = playerlevelSystem.GetLevelNumber().ToString("0");
+
+    }
+
+
 }

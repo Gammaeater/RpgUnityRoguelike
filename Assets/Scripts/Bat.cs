@@ -10,7 +10,7 @@ public class Bat : EnemyController
     public float _attackRadius;
     public Transform _homePosition;
     public Animator _anim;
-    public PlayerIIMovment _playerTarget;
+     public PlayerIIMovment _playerTarget;
     public float TimeBetweenShots;
     private float timeSinceLastShot;
     public Bat ownBat;
@@ -155,7 +155,7 @@ public class Bat : EnemyController
         randomBonusHit = (float)Random.Range(1, 5);
         batfullAttack = baseAtack + randomBonusHit;
 
-        _playerTarget.playerHealtShystem.Damage(damage);
+        //playerTarget.playerHealtShystem.Damage(damage);
 
 
 

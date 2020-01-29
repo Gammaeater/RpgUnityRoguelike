@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MinotourBoss : MonoBehaviour
+public class MinotourBoss : EnemyController
 {
     public Vector2 movment;
     public Vector2 playermovment;
@@ -12,22 +12,33 @@ public class MinotourBoss : MonoBehaviour
     public float comboAttackTimme;
     public Animator anim;
     public PlayerIIMovment _playerTarget;
-    public float moveSpeed;
+    //public float moveSpeed;
+    public float randomBonusHit;
+    public float minoFullAttack;
+    public HealthSystem playerHealtShystem;
+    public LevelSystem playerlevelSystem;
+    public HealthSystem minoHealtShystem;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        _target = GameObject.FindWithTag("PlayerII").transform;
+        _target = GameObject.FindWithTag("PlayerBossLevel").transform;
+        baseAtack = 4f;
+
+        _playerTarget = GameObject.FindWithTag("PlayerBossLevel").GetComponent("PlayerIIMovment") as PlayerIIMovment;
 
 
-        _playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
-     
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
         movment.x = transform.position.x;
         playermovment.x = _target.position.x;
 
@@ -42,16 +53,17 @@ public class MinotourBoss : MonoBehaviour
         CheckDistance();
         float distance = Vector3.Distance(_target.transform.position, transform.position);
 
-        InvokeRepeating("Attack2", 10, 2);
-        InvokeRepeating("Attack", 20, 1);
-        InvokeRepeating("Attack2", 40,2);
-        
+        InvokeRepeating("Attack2", 20, 2);
+        //InvokeRepeating("Attack", 30, 2);
+        //InvokeRepeating("Attack2", 40, 2);
+        //InvokeRepeating("Attack", 20, 1);
         anim.SetBool("isMoving", true);
-        if (distance < 4f)
+        if (distance < 4f && _playerTarget.playerHealtShystem.GetHealth() >= 1)
 
 
         {
-            Debug.Log("Distane checkinnnnnnnnnnnnnnnnnnnnnnng");
+            //playerTarget.playerHealtShystem.Damage(2f);
+
 
 
             anim.SetBool("isMoving", false);
@@ -61,9 +73,9 @@ public class MinotourBoss : MonoBehaviour
 
             if (Time.time > timeSinceLastShot + TimeBetweenShots)
             {
-                
+
                 //StartCoroutine(DmgSpawn());
-                 Attack();
+                Attack(minoFullAttack);
 
                 Debug.Log("Its works?");
                 //Tount();
@@ -71,10 +83,10 @@ public class MinotourBoss : MonoBehaviour
 
                 timeSinceLastShot = Time.time;
 
-               
+
 
             }
-          
+
 
 
 
@@ -137,7 +149,7 @@ public class MinotourBoss : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public void Attack(float damage)
     {
         anim.SetBool("AttackLEft2", false);
         anim.SetBool("AttackRight2", false);
@@ -146,8 +158,7 @@ public class MinotourBoss : MonoBehaviour
             anim.SetBool("AttackLEft1", false);
 
             anim.SetBool("AttackRight1", true);
-            // anim.SetBool("Playerontheleft", false);
-            Debug.Log("Testing code attack right 1");
+
 
 
         }
@@ -158,7 +169,6 @@ public class MinotourBoss : MonoBehaviour
 
             Debug.Log("Testing code attack left 1");
 
-            // anim.SetBool("Playerontheleft", true);
 
 
 
@@ -166,11 +176,11 @@ public class MinotourBoss : MonoBehaviour
 
         }
 
-        //randomBonusHit = (float)Random.Range(1, 5);
-        // batfullAttack = baseAtack + randomBonusHit;
+        randomBonusHit = (float)Random.Range(1, 5);
+        minoFullAttack = baseAtack + randomBonusHit;
 
-        //_playerTarget.playerHealtShystem.Damage(damage);
-        _playerTarget.playerHealtShystem.Damage(15);
+        _playerTarget.playerHealtShystem.Damage(damage);
+
 
 
 
@@ -178,7 +188,7 @@ public class MinotourBoss : MonoBehaviour
 
 
     }
-    void  Attack2()
+    void Attack2()
     {
 
         anim.SetBool("AttackLEft1", false);
@@ -189,8 +199,7 @@ public class MinotourBoss : MonoBehaviour
             anim.SetBool("AttackLEft2", false);
 
             anim.SetBool("AttackRight2", true);
-            // anim.SetBool("Playerontheleft", false);
-            Debug.Log("Testing code attack right 1");
+
 
 
         }
@@ -199,9 +208,7 @@ public class MinotourBoss : MonoBehaviour
             anim.SetBool("AttackRight2", false);
             anim.SetBool("AttackLEft2", true);
 
-            Debug.Log("Testing code attack left 1");
 
-            // anim.SetBool("Playerontheleft", true);
 
 
 
@@ -209,12 +216,12 @@ public class MinotourBoss : MonoBehaviour
 
         }
 
-        //randomBonusHit = (float)Random.Range(1, 5);
-
-        _playerTarget.playerHealtShystem.Damage(15);
-
+        randomBonusHit = (float)Random.Range(1, 5);
+        minoFullAttack = baseAtack + randomBonusHit;
 
 
+
+        InvokeRepeating("DamageOverTimeAttack", 20, 10);
 
 
 
@@ -223,7 +230,7 @@ public class MinotourBoss : MonoBehaviour
 
 
 
- 
+
 
     public void Tount()
     {
@@ -239,6 +246,60 @@ public class MinotourBoss : MonoBehaviour
         }
 
     }
+    public void DamageOverTimeAttack()
+    {
+        float distanceVar = Vector3.Distance(_target.transform.position, transform.position);
+        if (distanceVar <= 4f && _playerTarget.playerHealtShystem.GetHealth() >= 1)
+        {
+            _playerTarget.playerHealtShystem.Damage(2);
+
+        }
+    }
+
+    void OnMouseDown()
+    {
+        Debug.Log("OnMausDown");
+        if (anim.GetBool("IsTargeted") == false)
+        {
+            anim.SetBool("IsTargeted", true);
+        }
+        else
+        {
+            anim.SetBool("IsTargeted", false);
+        }
+
+    }
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        //if (col.tag == "Bullet" || col.name == "Bullet(Clone)")
+        //{
+        //    minoHealtShystem.Damage(50f);
+        //    print("Trafilem Trafilem Trafilem");
+        //    Destroy(col.gameObject);
+
+
+
+
+        //}
+        switch (col.tag)
+        {
+            case ( "Bullet" ):
+                minoHealtShystem.Damage(50f);
+                break;
+            case ("Bullet(Clone)"):
+                minoHealtShystem.Damage(50f);
+                break;
+            case ("Magic"):
+                minoHealtShystem.Damage(80f);
+                break;
+        }
+
+
+
+    }
+ 
 
 }
 

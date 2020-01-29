@@ -11,7 +11,7 @@ public class LevelControllScript : MonoBehaviour
         if (col2.tag == "PlayerII" || col2.tag == "PlayerII2lev")
         {
             SceneManager.LoadScene(LevelName);
-            Debug.Log("debug  dzialanie colidera?");
+            
         }
     }
 }
