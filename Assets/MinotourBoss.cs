@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MinotourBoss : EnemyController
 {
@@ -18,6 +19,7 @@ public class MinotourBoss : EnemyController
     public HealthSystem playerHealtShystem;
     public LevelSystem playerlevelSystem;
     public HealthSystem minoHealtShystem;
+    public Slider healthBar;
 
 
 
@@ -29,7 +31,7 @@ public class MinotourBoss : EnemyController
         baseAtack = 4f;
 
         _playerTarget = GameObject.FindWithTag("PlayerBossLevel").GetComponent("PlayerIIMovment") as PlayerIIMovment;
-
+        healthBar.gameObject.SetActive(true);
 
 
     }
@@ -38,7 +40,7 @@ public class MinotourBoss : EnemyController
     void FixedUpdate()
     {
 
-
+        healthBar.value = minoHealtShystem.GetHealth();
         movment.x = transform.position.x;
         playermovment.x = _target.position.x;
 

@@ -60,6 +60,13 @@ public class PlayerIIMovment : MonoBehaviour
             Haste();
 
         }
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+
+            Heal();
+
+        }
+
 
 
 
@@ -129,6 +136,10 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
+    }
+    void Heal()
+    {
+        playerHealtShystem.Heal(10f);
     }
 
 
