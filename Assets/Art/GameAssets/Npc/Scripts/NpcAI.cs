@@ -105,7 +105,7 @@ public class NpcAI : MonoBehaviour
   {
       questLog.SetActive(false);
         Noemianim.SetBool("isMoving", true);
-        Debug.Log("Its Work!!222!");
+
         busy = false;
   }
 }

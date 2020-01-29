@@ -35,7 +35,7 @@ public class TeddyBearQuestItem : MonoBehaviour
 
             SkeletonGuardLev3.SetActive(false);
 
-            Debug.Log("It Collision detected?");
+           
 
 
         }

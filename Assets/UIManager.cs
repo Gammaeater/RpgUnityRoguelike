@@ -28,23 +28,23 @@ public class UIManager : MonoBehaviour
             if (Input.GetKeyDown(action1))
             {
                 actionButtons[0].Select();
-                Debug.Log("Selected 1 ActionButton");
+                
             }
             if (Input.GetKeyDown(action2))
             {
                 actionButtons[1].Select();
-                Debug.Log("Selected 2 ActionButton");
+               
 
             }
             if (Input.GetKeyDown(action3))
             {
                 actionButtons[2].Select();
-                Debug.Log("Selected 3 ActionButton");
+               
             }
             if (Input.GetKeyDown(action4))
             {
                 actionButtons[3].Select();
-                Debug.Log("Selected 4 ActionButton");
+                
             }
 
 

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ColDetect : MonoBehaviour
 {
+    public GameObject warring;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,15 +18,18 @@ public class ColDetect : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D _other)
+    void OnTriggerStay2D(Collider2D _other)
     {
 
-        if (_other.gameObject.tag == "PlayerII2lev")
+        if (_other.gameObject.tag == "PlayerII")
         {
 
-            Debug.Log("It Collision detected?");
-                
-
+            warring.SetActive(true);
         }
     }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        warring.SetActive(false);
+    }
+     
 }

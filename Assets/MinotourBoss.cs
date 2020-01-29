@@ -265,7 +265,7 @@ public class MinotourBoss : EnemyController
 
     void OnMouseDown()
     {
-        Debug.Log("OnMausDown");
+
         if (anim.GetBool("IsTargeted") == false)
         {
             anim.SetBool("IsTargeted", true);
