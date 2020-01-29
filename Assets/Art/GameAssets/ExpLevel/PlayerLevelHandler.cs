@@ -10,6 +10,7 @@ public class PlayerLevelHandler : MonoBehaviour
     public LevelSystem playerLevelSytem;
     public Text questRequirements;
     public Text Finish;
+    public GameObject Level2EnerenceSign;
   // Start is called before the first frame update
   void Start()
     {
@@ -29,7 +30,7 @@ public class PlayerLevelHandler : MonoBehaviour
             questRequirements.text = "Bat Killed : 1  Dziekujemy!";
             Finish.text = "QUEST FINISHED!";
             Finish.color = Color.green;
-            
+            Level2EnerenceSign.SetActive(false);
 
             loopcontrol = false;
         }

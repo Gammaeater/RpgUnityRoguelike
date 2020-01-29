@@ -52,7 +52,8 @@ public class PlayerAttackmele : MonoBehaviour
             if (MyTarget != null && Time.time > timeSinceLastShot + TimeBetweenShots)
             {
 
-               StartCoroutine(Dmg_Spawn());
+                
+                StartCoroutine(Dmg_Spawn());
                 Attack(_playerFullAttack);
 
 
@@ -101,7 +102,7 @@ public class PlayerAttackmele : MonoBehaviour
 
 
         yield return new WaitForSeconds(0);
-        GameObject FloatHp = Instantiate(popUpprefab, _player.transform.position, _player.transform.rotation);
+       // GameObject FloatHp = Instantiate(popUpprefab, _player.transform.position, _player.transform.rotation);
     }
 
     public void UpdateHealth()

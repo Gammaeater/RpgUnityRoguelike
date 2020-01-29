@@ -186,7 +186,7 @@ public class Bat : EnemyController
         if (col.tag == "Bullet" || col.name == "Bullet(Clone)")
         {
             enemyHealtSystem.Damage(10f);
-            print("Trafilem Trafilem Trafilem");
+
             Destroy(col.gameObject);
 
 

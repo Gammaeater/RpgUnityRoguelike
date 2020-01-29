@@ -7,6 +7,7 @@ public class TeddyBearQuestItem : MonoBehaviour
     public Text questreq;
     public Text finished;
     public LevelSystem playerref;
+    public GameObject SkeletonGuardLev3;
 
 
 
@@ -32,9 +33,9 @@ public class TeddyBearQuestItem : MonoBehaviour
             finished.text = "Quest Complete";
             finished.color = Color.green;
 
+            SkeletonGuardLev3.SetActive(false);
 
-
-            Debug.Log("It Collision detected?");
+           
 
 
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NpcWizzardMario : MonoBehaviour
 {
+    public GameObject SpellText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,17 @@ public class NpcWizzardMario : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D player)
+    void OnTriggerStay2D(Collider2D _player)
     {
-        Debug.Log("Workin Test");
+
+        if (_player.gameObject.tag == "PlayerII2lev")
+        {
+            SpellText.SetActive(true);
+
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        SpellText.SetActive(false);
     }
 }

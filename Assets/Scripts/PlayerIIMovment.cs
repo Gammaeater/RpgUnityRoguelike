@@ -60,6 +60,13 @@ public class PlayerIIMovment : MonoBehaviour
             Haste();
 
         }
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+
+            Heal();
+
+        }
+
 
 
 
@@ -98,7 +105,7 @@ public class PlayerIIMovment : MonoBehaviour
     {
         if (col.tag == "Bullet" || col.name == "Bullet(Clone)")
         {
-            Debug.Log("Shoters Controll Logg");
+            
             playerHealtShystem.Damage(1f);
 
 
@@ -129,6 +136,10 @@ public class PlayerIIMovment : MonoBehaviour
 
 
 
+    }
+    void Heal()
+    {
+        playerHealtShystem.Heal(10f);
     }
 
 

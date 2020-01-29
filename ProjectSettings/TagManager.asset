@@ -21,6 +21,7 @@ TagManager:
   - PlayerBossLevel
   - BossMino
   - Magic
+  - slider
   layers:
   - Default
   - TransparentFX

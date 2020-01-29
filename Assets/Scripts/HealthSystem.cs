@@ -47,7 +47,7 @@ public class HealthSystem : MonoBehaviour
             
 
             
-            Debug.Log("U Die MotherFucker");
+            
         }
         
 
