@@ -10,7 +10,6 @@ public class PlayerAttackmele : MonoBehaviour
     [SerializeField] private Text healtText;
     [SerializeField] private Text expirence;
     [SerializeField] private Text level;
-    [SerializeField]
     public float TimeBetweenShots;
     public float timeSinceLastShot;
     public float _timePrefabSpawn;
@@ -20,7 +19,6 @@ public class PlayerAttackmele : MonoBehaviour
     public float _playerFullAttack;
     public Bat _batTarget;
     public Transform position;
-    public GameObject popUpprefab;
     public PlayerIIMovment _player;
     public HealthSystem playerHealtShystem;
     public LevelSystem playerlevelSystem;

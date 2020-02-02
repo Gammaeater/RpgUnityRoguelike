@@ -14,8 +14,8 @@ public class PlayerLevelHandler : MonoBehaviour
   // Start is called before the first frame update
   void Start()
     {
-
         loopcontrol = true;
+       
 
         batController = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
         playerLevelSytem = GameObject.FindWithTag("PlayerII").GetComponent("LevelSystem") as LevelSystem;

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class GameContoller : MonoBehaviour
 {
 
-    [SerializeField] private Text healtText;
+    [SerializeField] public Text healtText;
     [SerializeField] private Text expirence;
     [SerializeField] private Text level;
     public HealthSystem playerHealtShystem;
@@ -19,7 +19,7 @@ public class GameContoller : MonoBehaviour
     void Update()
     {
         UpdateHealth();
-        UpdateExpirience();
+        UpdateExpirience(); 
     }
 
 
