@@ -7,7 +7,7 @@ public class HealthSystem : MonoBehaviour
     public float _health;
     public float _health_Max;
     public GameObject destroyObject;
-    public GameObject effect;
+  
 
     void Start()
         

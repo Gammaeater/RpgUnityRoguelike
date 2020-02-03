@@ -24,8 +24,7 @@ public class EnemyPatrol : MonoBehaviour
     void Start()
     {
         patrolWaitTime = patrolStartWaitTime;
-        moveSpot.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
-        __playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
+
 
     }
 

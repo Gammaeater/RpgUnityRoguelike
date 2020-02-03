@@ -7,9 +7,7 @@ public class PlayerAttackmele : MonoBehaviour
 {
 
 
-    [SerializeField] private Text healtText;
-    [SerializeField] private Text expirence;
-    [SerializeField] private Text level;
+
     public float TimeBetweenShots;
     public float timeSinceLastShot;
     public float _timePrefabSpawn;
@@ -37,8 +35,7 @@ public class PlayerAttackmele : MonoBehaviour
     void FixedUpdate()
     {
 
-        UpdateHealth();
-        UpdateExpirience();
+   
 
 
         distance = Vector3.Distance(_batTarget.transform.position, transform.position);
@@ -103,25 +100,7 @@ public class PlayerAttackmele : MonoBehaviour
        // GameObject FloatHp = Instantiate(popUpprefab, _player.transform.position, _player.transform.rotation);
     }
 
-    public void UpdateHealth()
-    {
-
-        healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
-
-
-
-
-
-
-
-    }
-    public void UpdateExpirience()
-    {
-        expirence.text = playerlevelSystem.GetExpirience().ToString("0");
-        level.text = playerlevelSystem.GetLevelNumber().ToString("0");
-
-    }
-
+    
 
 
 

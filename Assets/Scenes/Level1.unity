@@ -66512,25 +66512,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1929192905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7590271852274218050, guid: b1d732437788818419f14d49d8ba7eb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 7590271851437117835}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1929192910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929192905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9d4cf951dfa01d4f8cf84ab25df28f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questAccept: {fileID: 2123987074}
 --- !u!1001 &1930463190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68043,9 +68024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e4acd8394a50e429a48eaeba6e4697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healtText: {fileID: 1455022861}
-  expirence: {fileID: 757048861}
-  level: {fileID: 1464743317}
   TimeBetweenShots: 2
   timeSinceLastShot: 0
   _timePrefabSpawn: 0
@@ -68133,7 +68111,6 @@ MonoBehaviour:
   _health: 100
   _health_Max: 100
   destroyObject: {fileID: 2044331541}
-  effect: {fileID: 0}
 --- !u!114 &2044331552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68168,6 +68145,23 @@ MonoBehaviour:
   questRequirements: {fileID: 1505649328}
   Finish: {fileID: 2123987074}
   Level2EnerenceSign: {fileID: 1469302131}
+--- !u!114 &2044331554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044331541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7bdec91fbd669499ad955109f273aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healtText: {fileID: 1455022861}
+  expirence: {fileID: 757048861}
+  level: {fileID: 1464743317}
+  playerHealtShystem: {fileID: 2044331550}
+  playerlevelSystem: {fileID: 2044331552}
 --- !u!1 &2052288927
 GameObject:
   m_ObjectHideFlags: 0

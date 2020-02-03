@@ -1419,8 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _health_Max: 0
-  destroyObject: {fileID: 0}
-  effect: {fileID: 449385067}
+  destroyObject: {fileID: 449385067}
 --- !u!58 &449385077
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -36037,7 +36036,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3206562140645392872, guid: 707c932c54c19df408f155a391c21730, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 707c932c54c19df408f155a391c21730, type: 3}
 --- !u!1 &1706512411
 GameObject:
@@ -36610,12 +36610,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1759558647}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1759558649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7590271852274218050, guid: b1d732437788818419f14d49d8ba7eb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1759558647}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1759558650 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7590271851757919266, guid: b1d732437788818419f14d49d8ba7eb0,
@@ -36640,19 +36634,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1759558647}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1759558653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759558649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9d4cf951dfa01d4f8cf84ab25df28f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questAccept: {fileID: 1410672830}
 --- !u!1001 &1799573962
 PrefabInstance:
   m_ObjectHideFlags: 0
