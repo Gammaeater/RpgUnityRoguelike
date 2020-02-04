@@ -43,6 +43,7 @@ public class HealthSystem : MonoBehaviour
         _health -= damageAmount;
         if (_health <= 0)
         {
+            _health = 0;
             gameObject.SetActive(false);
             
 

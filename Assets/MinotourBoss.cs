@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MinotourBoss : EnemyController 
 {
@@ -43,10 +44,11 @@ public class MinotourBoss : EnemyController
         healthBar.value = minoHealtShystem.GetHealth();
         movment.x = transform.position.x;
         playermovment.x = _target.position.x;
-        if(minoHealtShystem.GetHealth() <= 50)
+        if(minoHealtShystem.GetHealth() <= 100)
         {
             anim.SetBool("Dead", true);
             healthBar.gameObject.SetActive(false);
+            SceneManager.LoadScene("EndScene");
 
         }
         anim.SetBool("AttackLEft1", false);

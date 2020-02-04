@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Bat : EnemyController
@@ -59,11 +60,13 @@ public class Bat : EnemyController
 
 
         CheckDistance();
+        
         //StartCoroutine(UpdateHpAnim());
 
 
 
-       float distance = Vector3.Distance(_target.transform.position, transform.position);
+        // float distance = Vector3.Distance(_target.transform.position, transform.position);
+        float distance = 5f;
 
 
 
@@ -206,5 +209,7 @@ public class Bat : EnemyController
         }
 
     }
+ 
+
 
 }
