@@ -24,9 +24,7 @@ public class PlayerIIMovment : MonoBehaviour
     public Bat enemyAttack;
     public float actualHP;
     public Transform MyTarget { get; set; }
-
     public HealthSystem playerHealtShystem;
-    private Transform selectedUnit;
     private Bat enemy;
 
     void Start()
@@ -56,7 +54,7 @@ public class PlayerIIMovment : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
-           
+
             Haste();
 
         }
@@ -105,7 +103,7 @@ public class PlayerIIMovment : MonoBehaviour
     {
         if (col.tag == "Bullet" || col.name == "Bullet(Clone)")
         {
-            
+
             playerHealtShystem.Damage(1f);
 
 

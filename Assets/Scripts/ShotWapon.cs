@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class ShotWapon : MonoBehaviour
-
-
 {
     private float angle;
     public float TimeBetweenRangeShots;
@@ -21,7 +22,7 @@ public class ShotWapon : MonoBehaviour
 
     void Start()
     {
-        targetBat = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
+        //targetBat = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
        
     }
     // Update is called once per frame
@@ -37,6 +38,8 @@ public class ShotWapon : MonoBehaviour
 
                   
                     Shoot();
+                    
+                        
 
 
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class MinotourBoss : EnemyController
+public class MinotourBoss : EnemyController 
 {
     public Vector2 movment;
     public Vector2 playermovment;
@@ -30,7 +30,7 @@ public class MinotourBoss : EnemyController
         _target = GameObject.FindWithTag("PlayerBossLevel").transform;
         baseAtack = 4f;
 
-        _playerTarget = GameObject.FindWithTag("PlayerBossLevel").GetComponent("PlayerIIMovment") as PlayerIIMovment;
+        
         healthBar.gameObject.SetActive(true);
 
 
@@ -280,16 +280,7 @@ public class MinotourBoss : EnemyController
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        //if (col.tag == "Bullet" || col.name == "Bullet(Clone)")
-        //{
-        //    minoHealtShystem.Damage(50f);
-        //    print("Trafilem Trafilem Trafilem");
-        //    Destroy(col.gameObject);
-
-
-
-
-        //}
+      
         switch (col.tag)
         {
             case ( "Bullet"):
@@ -300,6 +291,8 @@ public class MinotourBoss : EnemyController
                 break;
             case ("Magic"):
                 minoHealtShystem.Damage(80f);
+               
+                Destroy(col.gameObject,1);
                 break;
         }
 
