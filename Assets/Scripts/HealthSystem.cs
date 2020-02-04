@@ -7,7 +7,7 @@ public class HealthSystem : MonoBehaviour
     public float _health;
     public float _health_Max;
     public GameObject destroyObject;
-    public GameObject effect;
+  
 
     void Start()
         
@@ -43,6 +43,7 @@ public class HealthSystem : MonoBehaviour
         _health -= damageAmount;
         if (_health <= 0)
         {
+            _health = 0;
             gameObject.SetActive(false);
             
 

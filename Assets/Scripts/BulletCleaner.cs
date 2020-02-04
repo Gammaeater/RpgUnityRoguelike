@@ -2,7 +2,7 @@
 
 public class BulletCleaner : MonoBehaviour
 {
-   
+
 
 
 
@@ -10,13 +10,13 @@ public class BulletCleaner : MonoBehaviour
 
 
     {
-       
+
 
         if (gameObject.name == "Bullet(Clone)")
         {
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 1f);
         }
     }
 
- 
+
 }

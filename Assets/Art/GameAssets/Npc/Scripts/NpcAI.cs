@@ -95,7 +95,7 @@ public class NpcAI : MonoBehaviour
           busy = true;
           questLog.SetActive(true);
 
-            Noemianim.SetBool("isMoving", false);
+            Noemianim.SetBool("IsMoving", false);
 
 
 
@@ -104,7 +104,7 @@ public class NpcAI : MonoBehaviour
   void OnTriggerExit2D(Collider2D other)
   {
       questLog.SetActive(false);
-        Noemianim.SetBool("isMoving", true);
+        Noemianim.SetBool("IsMoving", true);
 
         busy = false;
   }

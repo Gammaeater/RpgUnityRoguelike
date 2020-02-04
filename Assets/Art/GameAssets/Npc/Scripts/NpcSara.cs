@@ -3,7 +3,7 @@
 public class NpcSara : MonoBehaviour
 {
 
-    public string name;
+    
     public Rigidbody2D npcRBody;
     public Animator npcAnim;
     public NpcSara Npc;
@@ -27,22 +27,5 @@ public class NpcSara : MonoBehaviour
     {
 
     }
-    //void OnTriggerEnter2D(Collider2D _other)
-    //{
-    //    print("siemanko onenisnkjfnjdfhfkdl keleflelele");
-    //    if (_other.gameObject.tag == "PlayerII")
-    //    {
-    //        print("Działa jest gameObject tag == player");
 
-    //        if (Input.GetKeyDown(KeyCode.Space))
-    //        {
-    //            if (!NpcdMan.dialogActive)
-    //            {
-    //                NpcdMan.ShowBox(Npcdialog);
-    //                Debug.Log("Dziaaaaaaaaaaaaaaaaaaalaaaaaaaaaaaaaaaaaaaaaa czy niew ?");
-    //            }
-    //        }
-    //    }
-
-    //}
 }

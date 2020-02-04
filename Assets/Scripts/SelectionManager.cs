@@ -12,7 +12,7 @@ public class SelectionManager : MonoBehaviour
 
     void Start()
     {
-        _enemy  = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
+        //_enemy  = GameObject.FindWithTag("Bat").GetComponent("Bat") as Bat;
 
     }
     void Update()
@@ -31,8 +31,8 @@ public class SelectionManager : MonoBehaviour
                 {
                     player.MyTarget = hit.transform;
                     _enemy._anim.SetBool("isTargeted", true);
-                   
 
+                    Debug.Log("Hit a bat !!");
 
                     _enemy.isTargeted = true;
 

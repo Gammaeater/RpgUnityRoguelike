@@ -4,11 +4,15 @@ using UnityEngine.UI;
 public class GameContoller : MonoBehaviour
 {
 
-    [SerializeField] private Text healtText;
+    [SerializeField] public Text healtText;
     [SerializeField] private Text expirence;
     [SerializeField] private Text level;
+  
     public HealthSystem playerHealtShystem;
     public LevelSystem playerlevelSystem;
+    public HealthSystem bathp;
+    [SerializeField] public Text enemyhp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,9 @@ public class GameContoller : MonoBehaviour
     {
         UpdateHealth();
         UpdateExpirience();
+        BatUpdateHealth();
+
+
     }
 
 
@@ -27,7 +34,6 @@ public class GameContoller : MonoBehaviour
     {
 
         healtText.text = playerHealtShystem.GetHealth().ToString("0.0");
-
 
 
 
@@ -42,5 +48,15 @@ public class GameContoller : MonoBehaviour
 
     }
 
+    public void BatUpdateHealth()
+    {
+
+        enemyhp.text = bathp.GetHealth().ToString("0.0");
+
+
+
+
+
+    }
 
 }

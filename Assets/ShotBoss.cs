@@ -23,12 +23,13 @@ public class ShotBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float distance = Vector3.Distance(targetBoss.transform.position, transform.position);
         if (targetBoss.anim.GetBool("IsTargeted") == true)
         {
             if (Input.GetKeyDown(KeyCode.Keypad1))
             {
-                
+
                 ShootFire();
 
             }
@@ -43,7 +44,7 @@ public class ShotBoss : MonoBehaviour
 
 
                     Shoot();
-
+                   
 
 
 
@@ -124,5 +125,5 @@ public class ShotBoss : MonoBehaviour
 
 
     }
-
+    
 }

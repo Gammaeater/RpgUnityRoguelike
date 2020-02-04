@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Bat : EnemyController
@@ -10,7 +11,7 @@ public class Bat : EnemyController
     public float _attackRadius;
     public Transform _homePosition;
     public Animator _anim;
-     public PlayerIIMovment _playerTarget;
+    public PlayerIIMovment _playerTarget;
     public float TimeBetweenShots;
     private float timeSinceLastShot;
     public Bat ownBat;
@@ -33,21 +34,13 @@ public class Bat : EnemyController
 
 
 
-        expAmount = 50;
-
-
-        _anim = GetComponent<Animator>();
-        _target = GameObject.FindWithTag("PlayerII").transform;
+        
 
 
 
 
-        _playerTarget = GameObject.FindWithTag("PlayerII").GetComponent("PlayerIIMovment") as PlayerIIMovment;
 
 
-
-
-        actualHealth = ownBat.enemyHealtSystem.GetHealth();
 
         expAmount = 50;
 
@@ -67,15 +60,17 @@ public class Bat : EnemyController
 
 
         CheckDistance();
+        
         //StartCoroutine(UpdateHpAnim());
 
 
 
-        float distance = Vector3.Distance(_target.transform.position, transform.position);
+        // float distance = Vector3.Distance(_target.transform.position, transform.position);
+        float distance = 5f;
 
 
 
-        if (distance < 2.5f && _playerTarget.playerHealtShystem.GetHealth() >= 1)
+        if (distance < 1f && _playerTarget.playerHealtShystem.GetHealth() >= 1)
 
 
         {
@@ -87,8 +82,8 @@ public class Bat : EnemyController
 
                 //StartCoroutine(DmgSpawn());
                 Attack(batfullAttack);
-                
-                
+
+
 
 
                 timeSinceLastShot = Time.time;
@@ -126,7 +121,7 @@ public class Bat : EnemyController
             && Vector2.Distance(_target.position, transform.position) > _attackRadius)
         {
             transform.position = Vector2.MoveTowards(transform.position, _target.position, moveSpeed * Time.deltaTime);
-            
+
 
 
 
@@ -197,5 +192,24 @@ public class Bat : EnemyController
 
 
     }
+    void OnMouseDown()
+    {
+
+
+
+        if (_anim.GetBool("isTargeted") == false)
+        {
+            _anim.SetBool("isTargeted", true);
+            isTargeted = true;
+        }
+        else
+        {
+            _anim.SetBool("isTargeted", false);
+            isTargeted = false;
+        }
+
+    }
+ 
+
 
 }
