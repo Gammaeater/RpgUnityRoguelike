@@ -1,4 +1,4 @@
-# RpgUnityRoguelike
+# Top Down Rpg 2d 
 Moving W S A D
 on boss fight :
 Casting Spells
